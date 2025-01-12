@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
+  <style>
+    .contact-info {
+        display: none;
+        background-color: #f1f1f1;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+  </style>
+  <link rel="icon" href="pics/YZ.png" type="image/x-icon">
+</head>
+
+<body data-theme="cupcake" class="flex flex-col min-h-screen">
+    <div class="navbar bg-accent">
+        <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h7" />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shado">
+                <li><a href="intro.html">Home</a></li>
+                <li><a href="portfolio.html">Project Portfolio</a></li>
+                <li><a href="activities.html">On Campus Involvements</a></li>
+                <li><a href="resume.html" class="font-bold">Resume Related</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+              </ul>
+            </div>
+        </div>
+        <div class="flex-1">
+          <a class="text-xl font-bold text-primary-content absolute left-1/2 transform -translate-x-1/2">Resume Related</a>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center place-items-center min-h-screen items-center">
+        <div class="card bg-base-100 w-96 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title text-center">Math Related Courses</h2>
+              <ul class="list-disc pl-5">
+                <li class="mb-1">MATH151 - Engineering Math 1</li>
+                <li class="mb-1">MATH152 - Engineering Math 2</li>
+                <li class="mb-1">MATH251 - Engineering Math 3</li>
+                <li class="mb-1">MATH308 - Differential Equations</li>
+                <li class="mb-1">MATH311 - Top In Applied Math 1</li>
+              </ul>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 w-96 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title text-center">Electrical Engineering Related Courses</h2>
+              <ul class="list-disc pl-5">
+                <li class="mb-1">ECEN248 - Introduction to Digital System Designs</li>
+                <li class="mb-1">ECEN214 - Electrical Circuit Theory</li>
+                <li class="mb-1">ECEN350 - Computer Architecture and Design</li>
+                <li class="mb-1">ECEN314 - Signals and Systems</li>
+                <li class="mb-1">
+                    ECEN325 - Electronics
+                    <span class="indicator-item badge badge-secondary">In Progress</span>
+                </li>
+              </ul>
+            </div>
+        </div>
+          
+        <div class="card bg-base-100 w-96 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title text-center">Computer Science Related Courses</h2>
+              <ul class="list-disc pl-5">
+                <li class="mb-1">ENGR102 - Engineering Lab 1 Computation</li>
+                <li class="mb-1">CSCE120 Program Design and Concepts</li>
+                <li class="mb-1">CSCE221 - Data Structure and Algorithms</li>
+                <li class="mb-1">CSCE222 - Discrete Structure Computing</li>
+                <li class="mb-1">CSCE313 - Introduction to Computer System</li>
+                <li class="mb-1">CSCE331 - Foundations of Software Engineering</li>
+                <li class="mb-1">
+                    CSCE310 - Database Systems 
+                    <span class="indicator-item badge badge-secondary">In Progress</span>
+                </li>
+                <li class="mb-1">
+                    CSCE411 - Design and Analysis of Algorithms
+                    <span class="indicator-item badge badge-secondary">In Progress</span>
+                </li>
+              </ul>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 w-96 shadow-xl">
+            <div class="card-body items-center">
+              <h2 class="card-title text-center">Resume</h2>
+              <a href="pics/Zhang_Yuexin_TexasA&M.pdf" target="_blank" class="resume-link">
+                Click Here to Download My Resume (PDF)
+              </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer footer-center bg-accent text-primary-content p-10 mt-auto">
+        <aside>
+            <img
+                src="pics/YZ.png" 
+                alt="My custom image"
+                width="50"
+                height="50"
+                class="inline-block"
+            />
+            <p class="font-bold">
+                Created by Yuexin Zhang
+            </p>
+        </aside>        
+        <nav>
+          <!-- Icon Section -->
+            <div class="grid grid-flow-col gap-4">
+              <a href="#" onclick="showContactInfo('email')">
+                  <img class="mask mask-squircle" width="40" height="40" src="pics/email.png" alt="Email">
+              </a>
+              <a href="#" onclick="showContactInfo('phone')">
+                  <img class="mask mask-squircle" width="40" height="40" src="pics/phone.png" alt="Phone">
+              </a>
+              <a href="#" onclick="showContactInfo('linkedin')">
+                  <img class="mask mask-squircle" width="40" height="40" src="pics/linkedin.png" alt="LinkedIn">
+              </a>
+          </div>
+
+          <!-- Contact Information Section -->
+          <div id="email-info" class="contact-info">
+              <p>Email: yuexin.z.jobs@gmail.com</p>
+          </div>
+          <div id="phone-info" class="contact-info">
+              <p>Phone: +1 (806)392-4012</p>
+          </div>
+          <div id="linkedin-info" class="contact-info">
+              <p>LinkedIn: <a href="https://www.linkedin.com/in/yuexin-zhang-31190a25a/" target="_blank">LinkedIn Profile</a></p>
+          </div>
+
+          <script>
+              function showContactInfo(type) {
+                  const allContactInfo = document.querySelectorAll('.contact-info');
+                  allContactInfo.forEach(info => {
+                      info.style.display = 'none';
+                  });
+
+                  const contactInfo = document.getElementById(`${type}-info`);
+                  if (contactInfo) {
+                      contactInfo.style.display = 'block';
+                  }
+              }
+          </script>
+        </nav>
+    </footer>
+</body>
+</html>
