@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
+  <style>
+    .contact-info {
+        display: none;
+        background-color: #f1f1f1;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body data-theme="cupcake" class="flex flex-col min-h-screen">
+    <div class="navbar bg-accent">
+        <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h7" />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shado">
+                <li><a href="intro.html">Home</a></li>
+                <li><a href="portfolio.html">Project Portfolio</a></li>
+                <li><a href="activities.html">Fun Activities</a></li>
+                <li><a href="contact.html" class="border-b-4 border-accent-500">Contact Me</a></li>
+              </ul>
+            </div>
+        </div>
+        <div class="flex-1">
+          <a class="text-xl font-bold text-primary-content absolute left-1/2 transform -translate-x-1/2">Contact Me</a>
+        </div>
+    </div>
+
+    <div class="min-h-screen flex justify-center items-center">
+        <div class="card bg-base-100 w-96 shadow-xl">
+          <figure>
+            <img
+              src="pics/contact_smile.JPG"
+              height="300"
+              alt="me" />
+          </figure>
+          <form
+            action="https://formsubmit.co/3d40b49b74af52e0ee790e5dcfee8729"
+            method="POST"
+            class="card bg-base-100 w-96 shadow-xl p-4"
+            >
+            <label class="input input-bordered flex items-center gap-2">
+                First Name
+                <input type="text" class="grow" placeholder="" />
+            </label>
+            <label class="input input-bordered flex items-center gap-2">
+                Last Name
+                <input type="text" class="grow" placeholder="" />
+            </label>
+            <label class="input input-bordered flex items-center gap-2">
+                Email
+                <input type="text" class="grow" placeholder="" />
+            </label>
+            <label class="input input-bordered flex items-center gap-2">
+                Phone Number
+                <input type="text" class="grow" placeholder="" />
+            </label>
+            <textarea class="textarea textarea-bordered" placeholder="Leave a Message"></textarea>
+            <button class="btn btn-primary" id="openPopupBtn">Submit</button>
+          </form>
+        </div>
+    </div>      
+
+    <!-- Footer Section -->
+    <footer class="footer footer-center bg-accent text-primary-content p-10 mt-auto">
+      <aside>
+          <img
+              src="pics/YZ.png" 
+              alt="My custom image"
+              width="50"
+              height="50"
+              class="inline-block"
+          />
+          <p class="font-bold">
+              Created by Yuexin Zhang
+          </p>
+      </aside>        
+      <nav>
+        <!-- Icon Section -->
+          <div class="grid grid-flow-col gap-4">
+            <a href="#" onclick="showContactInfo('email')">
+                <img class="mask mask-squircle" width="40" height="40" src="pics/email.png" alt="Email">
+            </a>
+            <a href="#" onclick="showContactInfo('phone')">
+                <img class="mask mask-squircle" width="40" height="40" src="pics/phone.png" alt="Phone">
+            </a>
+            <a href="#" onclick="showContactInfo('linkedin')">
+                <img class="mask mask-squircle" width="40" height="40" src="pics/linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div id="email-info" class="contact-info">
+            <p>Email: yuexin.z.jobs@gmail.com</p>
+        </div>
+        <div id="phone-info" class="contact-info">
+            <p>Phone: +1 (806)392-4012</p>
+        </div>
+        <div id="linkedin-info" class="contact-info">
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/yuexin-zhang-31190a25a/" target="_blank">LinkedIn Profile</a></p>
+        </div>
+
+        <script>
+            function showContactInfo(type) {
+                const allContactInfo = document.querySelectorAll('.contact-info');
+                allContactInfo.forEach(info => {
+                    info.style.display = 'none';
+                });
+
+                const contactInfo = document.getElementById(`${type}-info`);
+                if (contactInfo) {
+                    contactInfo.style.display = 'block';
+                }
+            }
+        </script>
+      </nav>
+  </footer>
+</body>
+</html>
