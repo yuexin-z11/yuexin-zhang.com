@@ -3,12 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Portfolio</title>
+  <title>Home</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
+  <style>
+    .contact-info {
+        display: none;
+        background-color: #f1f1f1;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+  </style>
 </head>
 
-<body data-theme="dark">
+<body data-theme="cupcake" class="flex flex-col min-h-screen">
     <div class="navbar bg-accent">
         <div class="navbar-start">
             <div class="dropdown">
@@ -29,15 +38,16 @@
               <ul
                 tabindex="0"
                 class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shado">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="portfolio.html" class="border-b-4 border-accent-500">Project Portfolio</a></li>
-                <li><a href="activities.html">Fun Activities</a></li>
+                <li><a href="intro.html">Home</a></li>
+                <li><a href="portfolio.html" class="font-bold">Project Portfolio</a></li>
+                <li><a href="activities.html">On Campus Involvements</a></li>
+                <li><a href="resume.html">Resume Related</a></li>
                 <li><a href="contact.html">Contact Me</a></li>
               </ul>
             </div>
         </div>
         <div class="flex-1">
-          <a class="text-xl font-bold text-primary-content">Project Portfolio</a>
+          <a class="text-xl font-bold text-primary-content absolute left-1/2 transform -translate-x-1/2">Project Portfolio</a>
         </div>
     </div>
 
@@ -46,7 +56,33 @@
         <div class="card bg-base-100 w-96 shadow-xl">
             <figure>
                 <img
-                    src="/pics/pos.png"
+                    src="/public/pics/working.jpg"
+                    alt="Shoes" />
+            </figure>
+            <div class="card-body">
+                <h2 class="card-title">Resume Chatbot</h2>
+                <p>A Chatbot in answer to all questions about my resume and activities involved in.</p>
+                <div class="card-actions justify-end">
+                    <!-- Trigger Button -->
+                    <button class="btn btn-primary" id="openPopupBtn">Learn More</button>
+
+                    <!-- Popup Overlay -->
+                    <div id="popupOverlay1" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                        <div class="bg-white rounded-lg shadow-lg p-6 w-80">
+                            <h2 class="text-lg font-bold mb-4">Resume Chatbot</h2>
+                            <li class="text-sm mb-1">An interactive resume chatbot using a custom ML model trained with PyTorch.</li>
+                            <li class="text-sm mb-1">Deployed on AWS for scalability and 24/7 availability.</li>
+                            <li class="text-sm mb-6">Created a dynamic, tailored user experience for employers.</li>
+                            <button class="btn btn-secondary w-full" id="closePopupBtn">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100 w-96 shadow-xl">
+            <figure>
+                <img
+                    src="pics/pos.png"
                     alt="POS" />
             </figure>
             <div class="card-body">
@@ -57,10 +93,12 @@
                     <button class="btn btn-primary" id="openPopupBtn">Learn More</button>
 
                     <!-- Popup Overlay -->
-                    <div id="popupOverlay1" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div id="popupOverlay2" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                         <div class="bg-white rounded-lg shadow-lg p-6 w-80">
                             <h2 class="text-lg font-bold mb-4">Panda Express POS System</h2>
-                            <p class="text-sm mb-6">This is a simple popup window.</p>
+                            <li class="text-sm mb-1">Built a worker efficiency system for Panda Express using CSS, React, HTML, JavaScript, PostgreSQL, Next.js and Rest API.</li>
+                            <li class="text-sm mb-1">Developed a responsive front-end and a robust back-end API.</li>
+                            <li class="text-sm mb-6">Enhanced data handling and optimized real-time operations.</li>
                             <button class="btn btn-secondary w-full" id="closePopupBtn">Close</button>
                         </div>
                     </div>
@@ -70,21 +108,23 @@
         <div class="card bg-base-100 w-96 shadow-xl">
             <figure>
                 <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                    src="/public/pics/wheelchair.jpg"
                     alt="Shoes" />
             </figure>
             <div class="card-body">
-                <h2 class="card-title">Motion Controlled Wheelchair</h2>
+                <h2 class="card-title">Motion Controlled Wheelchair Prototype</h2>
                 <p>A Wheelchair that is controlled by the movements of one's head.</p>
                 <div class="card-actions justify-end">
                     <!-- Trigger Button -->
                     <button class="btn btn-primary" id="openPopupBtn">Learn More</button>
 
                     <!-- Popup Overlay -->
-                    <div id="popupOverlay2" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div id="popupOverlay3" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                         <div class="bg-white rounded-lg shadow-lg p-6 w-80">
-                            <h2 class="text-lg font-bold mb-4">Panda Express POS System</h2>
-                            <p class="text-sm mb-6">This is a simple popup window.</p>
+                            <h2 class="text-lg font-bold mb-4">Motion Controlled Wheelchair Prototype</h2>
+                            <li class="text-sm mb-1">Built a motion-detected wheelchair using a Raspberry Pi and a camera for real-time head movement tracking.</li>
+                            <li class="text-sm mb-1">Implemented speed control based on head turn angles for adaptive movement.</li>
+                            <li class="text-sm mb-6">Integrated a manual switch for easy on/off control and user convenience.</li>
                             <button class="btn btn-secondary w-full" id="closePopupBtn">Close</button>
                         </div>
                     </div>
@@ -94,7 +134,7 @@
         <div class="card bg-base-100 w-96 shadow-xl">
             <figure>
                 <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                    src="pics/lights.jpg"
                     alt="Shoes" />
             </figure>
             <div class="card-body">
@@ -105,10 +145,38 @@
                     <button class="btn btn-primary" id="openPopupBtn">Learn More</button>
 
                     <!-- Popup Overlay -->
-                    <div id="popupOverlay3" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div id="popupOverlay4" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                         <div class="bg-white rounded-lg shadow-lg p-6 w-80">
-                            <h2 class="text-lg font-bold mb-4">Panda Express POS System</h2>
-                            <p class="text-sm mb-6">This is a simple popup window.</p>
+                            <h2 class="text-lg font-bold mb-4">Smart Lighting System</h2>
+                            <li class="text-sm mb-1">Developed a smart lighting system that adjusts brightness based on room dimness.</li>
+                            <li class="text-sm mb-1">Used sensors to detect light levels and optimize energy usage.</li>
+                            <li class="text-sm mb-6">Improved energy efficiency and user comfort with adaptive lighting.</li>
+                            <button class="btn btn-secondary w-full" id="closePopupBtn">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100 w-96 shadow-xl">
+            <figure>
+                <img
+                    src="pics/tracker.jpg"
+                    alt="Shoes" />
+            </figure>
+            <div class="card-body">
+                <h2 class="card-title">Mini GPS Tracker</h2>
+                <p>A cube like GPS tracker that records the location and the route of the person.</p>
+                <div class="card-actions justify-end">
+                    <!-- Trigger Button -->
+                    <button class="btn btn-primary" id="openPopupBtn">Learn More</button>
+
+                    <!-- Popup Overlay -->
+                    <div id="popupOverlay5" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                        <div class="bg-white rounded-lg shadow-lg p-6 w-80">
+                            <h2 class="text-lg font-bold mb-4">Mini GPS Tracker</h2>
+                            <li class="text-sm mb-1">Developed a mini GPS tracker using a Raspberry Pi and Python for real-time location tracking.</li>
+                            <li class="text-sm mb-1">Designed to be quarter coin-sized for portability.</li>
+                            <li class="text-sm mb-6">Built functionality to track and display the user’s travel route over time.</li>
                             <button class="btn btn-secondary w-full" id="closePopupBtn">Close</button>
                         </div>
                     </div>
@@ -139,10 +207,10 @@
     </div>
 
     <!-- Footer Section -->
-    <footer class="footer footer-center bg-accent text-primary-content p-10">
+    <footer class="footer footer-center bg-accent text-primary-content p-10 mt-auto">
         <aside>
             <img
-                src="/pics/name_icon.png" 
+                src="pics/YZ.png" 
                 alt="My custom image"
                 width="50"
                 height="50"
@@ -153,20 +221,43 @@
             </p>
         </aside>        
         <nav>
-          <div class="grid grid-flow-col gap-4">
-            <!-- Replace SVG with image -->
-            <a>
-              <img src="your_image_path_here/twitter-icon.png" alt="Twitter" width="24" height="24">
-            </a>
-            <!-- Replace SVG with image -->
-            <a>
-              <img src="your_image_path_here/facebook-icon.png" alt="Facebook" width="24" height="24">
-            </a>
-            <!-- Replace SVG with image -->
-            <a>
-              <img src="your_image_path_here/linkedin-icon.png" alt="LinkedIn" width="24" height="24">
-            </a>
+          <!-- Icon Section -->
+            <div class="grid grid-flow-col gap-4">
+              <a href="#" onclick="showContactInfo('email')">
+                  <img class="mask mask-squircle" width="40" height="40" src="pics/email.png" alt="Email">
+              </a>
+              <a href="#" onclick="showContactInfo('phone')">
+                  <img class="mask mask-squircle" width="40" height="40" src="pics/phone.png" alt="Phone">
+              </a>
+              <a href="#" onclick="showContactInfo('linkedin')">
+                  <img class="mask mask-squircle" width="40" height="40" src="pics/linkedin.png" alt="LinkedIn">
+              </a>
           </div>
+
+          <!-- Contact Information Section -->
+          <div id="email-info" class="contact-info">
+              <p>Email: yuexin.z.jobs@gmail.com</p>
+          </div>
+          <div id="phone-info" class="contact-info">
+              <p>Phone: +1 (806)392-4012</p>
+          </div>
+          <div id="linkedin-info" class="contact-info">
+              <p>LinkedIn: <a href="https://www.linkedin.com/in/yuexin-zhang-31190a25a/" target="_blank">LinkedIn Profile</a></p>
+          </div>
+
+          <script>
+              function showContactInfo(type) {
+                  const allContactInfo = document.querySelectorAll('.contact-info');
+                  allContactInfo.forEach(info => {
+                      info.style.display = 'none';
+                  });
+
+                  const contactInfo = document.getElementById(`${type}-info`);
+                  if (contactInfo) {
+                      contactInfo.style.display = 'block';
+                  }
+              }
+          </script>
         </nav>
     </footer>
 </body>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,71 +7,426 @@
   <title>Home</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
+  <style>
+    .contact-info {
+        display: none;
+        background-color: #f1f1f1;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+  </style>
 </head>
 
-<body data-theme="dark">
-    <div class="navbar bg-accent">
-        <div class="navbar-start">
-            <div class="dropdown">
-              <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h7" />
-                </svg>
-              </div>
-              <ul
-                tabindex="0"
-                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shado">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="portfolio.html">Project Portfolio</a></li>
-                <li><a href="activities.html" class="border-b-4 border-accent-500">Activities</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-              </ul>
-            </div>
-        </div>
-        <div class="flex-1">
-            <a class="text-xl font-bold text-primary-content absolute left-1/2 transform -translate-x-1/2">Activities</a>
+<body data-theme="cupcake" class="flex flex-col min-h-screen">
+  <div class="navbar bg-accent">
+    <div class="navbar-start">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h7" />
+            </svg>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shado">
+            <li><a href="intro.html">Home</a></li>
+            <li><a href="portfolio.html">Project Portfolio</a></li>
+            <li><a href="activities.html" class="font-bold">On Campus Involvements</a></li>
+            <li><a href="resume.html">Resume Related</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+          </ul>
         </div>
     </div>
-    
-    <!-- Footer Section -->
-    <footer class="footer footer-center bg-accent text-primary-content p-10">
-        <aside>
-            <img
-                src="/pics/name_icon.png" 
-                alt="My custom image"
-                width="50"
-                height="50"
-                class="inline-block"
-            />
-            <p class="font-bold">
-                Created by Yuexin Zhang
-            </p>
-        </aside>        
-        <nav>
+    <div class="flex-1">
+      <a class="text-xl font-bold text-primary-content absolute left-1/2 transform -translate-x-1/2">On Campus Involvements</a>
+    </div>
+  </div>
+
+  <!-- Photo Display Section -->
+  <div class="carousel carousel-center" style="height: 400px;">
+    <div class="carousel-item">
+      <img src="pics/4.jpg" alt="Pizza" />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="pics/13.JPG"
+        alt="Pizza" />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="pics/1.JPG"
+        alt="Pizza" />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="pics/2.JPG"
+        alt="Pizza" />
+    </div>
+    <div class="carousel-item">
+      <img src="pics/3.JPG" alt="Pizza" />
+    </div>
+    <div class="carousel-item">
+      <img src="pics/5.jpg" alt="Pizza" />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="pics/6.jpg"
+        alt="Pizza" />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="pics/7.jpg"
+        alt="Pizza" />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="pics/8.jpg"
+        alt="Pizza" />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="pics/9.jpg"
+        alt="Pizza" />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="pics/10.jpg"
+        alt="Pizza" />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="pics/11.jpg"
+        alt="Pizza" />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="pics/12.jpg"
+        alt="Pizza" />
+    </div>
+  </div>
+
+  <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+    <li>
+      <div class="timeline-middle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="h-5 w-5">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="timeline-start mb-10 md:text-end">
+        <time class="font-mono italic">2022 Fall</time>
+        <div class="text-lg font-black">Freshman Council - Member</div>
+        The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh
+        personal computer. It played a pivotal role in establishing desktop publishing as a general
+        office function. The motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were housed
+        in a beige case with integrated carrying handle; it came with a keyboard and single-button
+        mouse.
+      </div>
+      <hr />
+    </li>
+    <li>
+      <hr />
+      <div class="timeline-middle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="h-5 w-5">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="timeline-start mb-10 md:text-end">
+        <div class="text-lg font-black">Class Council - Member</div>
+        iMac is a family of all-in-one Mac desktop computers designed and built by Apple Inc. It has
+        been the primary part of Apple's consumer desktop offerings since its debut in August 1998,
+        and has evolved through seven distinct forms
+      </div>
+      <hr />
+    </li>
+    <li>
+      <div class="timeline-middle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="h-5 w-5">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="timeline-end md:mb-10">
+        <time class="font-mono italic">2023 Summer</time>
+        <div class="text-lg font-black">Freshman Camp (Session H Yellow Camp Baumann) - Counselor</div>
+        The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh
+        personal computer. It played a pivotal role in establishing desktop publishing as a general
+        office function. The motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were housed
+        in a beige case with integrated carrying handle; it came with a keyboard and single-button
+        mouse.
+      </div>
+      <hr />
+    </li>
+    <li>
+      <div class="timeline-middle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="h-5 w-5">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="timeline-start mb-10 md:text-end">
+        <time class="font-mono italic">2023 Spring</time>
+        <div class="text-lg font-black">Big Event - Volunteer</div>
+        The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh
+        personal computer. It played a pivotal role in establishing desktop publishing as a general
+        office function. The motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were housed
+        in a beige case with integrated carrying handle; it came with a keyboard and single-button
+        mouse.
+      </div>
+      <hr />
+    </li>
+    <li>
+      <div class="timeline-middle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="h-5 w-5">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="timeline-end md:mb-10">
+        <time class="font-mono italic">2023 Fall</time>
+        <div class="text-lg font-black">Freshman Council - Counselor</div>
+        The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh
+        personal computer. It played a pivotal role in establishing desktop publishing as a general
+        office function. The motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were housed
+        in a beige case with integrated carrying handle; it came with a keyboard and single-button
+        mouse.
+      </div>
+      <hr />
+    </li>
+    <li>
+      <hr />
+      <div class="timeline-middle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="h-5 w-5">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="timeline-end md:mb-10">
+        <div class="text-lg font-black">Replant - Volunteer</div>
+        iMac is a family of all-in-one Mac desktop computers designed and built by Apple Inc. It has
+        been the primary part of Apple's consumer desktop offerings since its debut in August 1998,
+        and has evolved through seven distinct forms
+      </div>
+      <hr />
+    </li>
+    <li>
+      <div class="timeline-middle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="h-5 w-5">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="timeline-start mb-10 md:text-end">
+        <time class="font-mono italic">2024 Spring</time>
+        <div class="text-lg font-black">IEEE - Member</div>
+        The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh
+        personal computer. It played a pivotal role in establishing desktop publishing as a general
+        office function. The motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were housed
+        in a beige case with integrated carrying handle; it came with a keyboard and single-button
+        mouse.
+      </div>
+      <hr />
+    </li>
+    <li>
+      <div class="timeline-middle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="h-5 w-5">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="timeline-start mb-10 md:text-end">
+        <div class="text-lg font-black">Big Event - Volunteer</div>
+        The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh
+        personal computer. It played a pivotal role in establishing desktop publishing as a general
+        office function. The motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were housed
+        in a beige case with integrated carrying handle; it came with a keyboard and single-button
+        mouse.
+      </div>
+      <hr />
+    </li>
+    <li>
+      <div class="timeline-middle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="h-5 w-5">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="timeline-end md:mb-10">
+        <time class="font-mono italic">2024 Summer</time>
+        <div class="text-lg font-black">Freshman Camp (Session G Purple Camp Shurtleff) - Counselor</div>
+        The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh
+        personal computer. It played a pivotal role in establishing desktop publishing as a general
+        office function. The motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were housed
+        in a beige case with integrated carrying handle; it came with a keyboard and single-button
+        mouse.
+      </div>
+      <hr />
+    </li>
+    <li>
+      <hr />
+      <div class="timeline-middle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="h-5 w-5">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="timeline-start mb-10 md:text-end">
+        <time class="font-mono italic">2024 Fall</time>
+        <div class="text-lg font-black">T.U.R.T.L.E. Robotics - Member</div>
+        iMac is a family of all-in-one Mac desktop computers designed and built by Apple Inc. It has
+        been the primary part of Apple's consumer desktop offerings since its debut in August 1998,
+        and has evolved through seven distinct forms
+      </div>
+      <hr />
+    </li>
+    <li>
+      <hr />
+      <div class="timeline-middle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="h-5 w-5">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="timeline-start mb-10 md:text-end">
+        <div class="text-lg font-black">Aggie Icers - Member</div>
+        iMac is a family of all-in-one Mac desktop computers designed and built by Apple Inc. It has
+        been the primary part of Apple's consumer desktop offerings since its debut in August 1998,
+        and has evolved through seven distinct forms
+      </div>
+      <hr />
+    </li>
+  </ul>
+
+  <!-- Footer Section -->
+  <footer class="footer footer-center bg-accent text-primary-content p-10 mt-auto">
+    <aside>
+        <img
+            src="pics/YZ.png" 
+            alt="My custom image"
+            width="50"
+            height="50"
+            class="inline-block"
+        />
+        <p class="font-bold">
+            Created by Yuexin Zhang
+        </p>
+    </aside>        
+    <nav>
+      <!-- Icon Section -->
         <div class="grid grid-flow-col gap-4">
-            <!-- Replace SVG with image -->
-            <a>
-            <img src="your_image_path_here/twitter-icon.png" alt="Twitter" width="24" height="24">
-            </a>
-            <!-- Replace SVG with image -->
-            <a>
-            <img src="your_image_path_here/facebook-icon.png" alt="Facebook" width="24" height="24">
-            </a>
-            <!-- Replace SVG with image -->
-            <a>
-            <img src="your_image_path_here/linkedin-icon.png" alt="LinkedIn" width="24" height="24">
-            </a>
-        </div>
-        </nav>
-    </footer>
+          <a href="#" onclick="showContactInfo('email')">
+              <img class="mask mask-squircle" width="40" height="40" src="pics/email.png" alt="Email">
+          </a>
+          <a href="#" onclick="showContactInfo('phone')">
+              <img class="mask mask-squircle" width="40" height="40" src="pics/phone.png" alt="Phone">
+          </a>
+          <a href="#" onclick="showContactInfo('linkedin')">
+              <img class="mask mask-squircle" width="40" height="40" src="pics/linkedin.png" alt="LinkedIn">
+          </a>
+      </div>
+
+      <!-- Contact Information Section -->
+      <div id="email-info" class="contact-info">
+          <p>Email: yuexin.z.jobs@gmail.com</p>
+      </div>
+      <div id="phone-info" class="contact-info">
+          <p>Phone: +1 (806)392-4012</p>
+      </div>
+      <div id="linkedin-info" class="contact-info">
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/yuexin-zhang-31190a25a/" target="_blank">LinkedIn Profile</a></p>
+      </div>
+
+      <script>
+          function showContactInfo(type) {
+              const allContactInfo = document.querySelectorAll('.contact-info');
+              allContactInfo.forEach(info => {
+                  info.style.display = 'none';
+              });
+
+              const contactInfo = document.getElementById(`${type}-info`);
+              if (contactInfo) {
+                  contactInfo.style.display = 'block';
+              }
+          }
+      </script>
+    </nav>
+  </footer>
 </body>
 </html>

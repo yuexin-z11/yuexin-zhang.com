@@ -6,9 +6,18 @@
   <title>Home</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
+  <style>
+    .contact-info {
+        display: none;
+        background-color: #f1f1f1;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+  </style>
 </head>
 
-<body data-theme="dark">
+<body data-theme="cupcake" class="flex flex-col min-h-screen">
     <div class="navbar bg-accent">
         <div class="navbar-start">
             <div class="dropdown">
@@ -29,9 +38,10 @@
               <ul
                 tabindex="0"
                 class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shado">
-                <li><a href="home.html" class="border-b-4 border-accent-500">Home</a></li>
+                <li><a href="intro.html" class="font-bold">Home</a></li>
                 <li><a href="portfolio.html">Project Portfolio</a></li>
-                <li><a href="activities.html">Fun Activities</a></li>
+                <li><a href="activities.html">On Campus Involvements</a></li>
+                <li><a href="resume.html">Resume Related</a></li>
                 <li><a href="contact.html">Contact Me</a></li>
               </ul>
             </div>
@@ -85,10 +95,10 @@ Thank you for visiting my website!`;
     </div>
 
     <!-- Footer Section -->
-    <footer class="footer footer-center bg-accent text-primary-content p-10">
+    <footer class="footer footer-center bg-accent text-primary-content p-10 mt-auto">
         <aside>
             <img
-                src="/pics/YZ.png" 
+                src="pics/YZ.png" 
                 alt="My custom image"
                 width="50"
                 height="50"
@@ -99,17 +109,43 @@ Thank you for visiting my website!`;
             </p>
         </aside>        
         <nav>
-          <div class="grid grid-flow-col gap-4">
-            <a>
-              <img class="mask mask-squircle" src="/pics/email.png" alt="Email" width="24" height="24">
-            </a>
-            <a>
-              <img class="mask mask-squircle" src="/pics/phone.png" alt="Phone" width="24" height="24">
-            </a>
-            <a>
-              <img class="mask mask-squircle" src="/pics/linkedin.png" alt="LinkedIn" width="24" height="24">
-            </a>
+          <!-- Icon Section -->
+            <div class="grid grid-flow-col gap-4">
+              <a href="#" onclick="showContactInfo('email')">
+                  <img class="mask mask-squircle" width="40" height="40" src="pics/email.png" alt="Email">
+              </a>
+              <a href="#" onclick="showContactInfo('phone')">
+                  <img class="mask mask-squircle" width="40" height="40" src="pics/phone.png" alt="Phone">
+              </a>
+              <a href="#" onclick="showContactInfo('linkedin')">
+                  <img class="mask mask-squircle" width="40" height="40" src="pics/linkedin.png" alt="LinkedIn">
+              </a>
           </div>
+
+          <!-- Contact Information Section -->
+          <div id="email-info" class="contact-info">
+              <p>Email: yuexin.z.jobs@gmail.com</p>
+          </div>
+          <div id="phone-info" class="contact-info">
+              <p>Phone: +1 (806)392-4012</p>
+          </div>
+          <div id="linkedin-info" class="contact-info">
+              <p>LinkedIn: <a href="https://www.linkedin.com/in/yuexin-zhang-31190a25a/" target="_blank">LinkedIn Profile</a></p>
+          </div>
+
+          <script>
+              function showContactInfo(type) {
+                  const allContactInfo = document.querySelectorAll('.contact-info');
+                  allContactInfo.forEach(info => {
+                      info.style.display = 'none';
+                  });
+
+                  const contactInfo = document.getElementById(`${type}-info`);
+                  if (contactInfo) {
+                      contactInfo.style.display = 'block';
+                  }
+              }
+          </script>
         </nav>
     </footer>
 </body>

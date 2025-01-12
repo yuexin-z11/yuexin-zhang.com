@@ -38,60 +38,79 @@
               <ul
                 tabindex="0"
                 class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shado">
-                <li><a href="intro.html" class="font-bold">Home</a></li>
+                <li><a href="intro.html">Home</a></li>
                 <li><a href="portfolio.html">Project Portfolio</a></li>
                 <li><a href="activities.html">On Campus Involvements</a></li>
-                <li><a href="resume.html">Resume Related</a></li>
+                <li><a href="resume.html" class="font-bold">Resume Related</a></li>
                 <li><a href="contact.html">Contact Me</a></li>
               </ul>
             </div>
         </div>
         <div class="flex-1">
-          <a class="text-xl font-bold text-primary-content absolute left-1/2 transform -translate-x-1/2">ALL ABOUT ME</a>
+          <a class="text-xl font-bold text-primary-content absolute left-1/2 transform -translate-x-1/2">Resume Related</a>
         </div>
     </div>
-    <div class="mockup-browser bg-primary border">
-        <div class="mockup-browser-toolbar">
-          <div class="input">Yuexin Zhang</div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center place-items-center min-h-screen items-center">
+        <div class="card bg-base-100 w-96 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title text-center">Math Related Courses</h2>
+              <ul class="list-disc pl-5">
+                <li class="mb-1">MATH151 - Engineering Math 1</li>
+                <li class="mb-1">MATH152 - Engineering Math 2</li>
+                <li class="mb-1">MATH251 - Engineering Math 3</li>
+                <li class="mb-1">MATH308 - Differential Equations</li>
+                <li class="mb-1">MATH311 - Top In Applied Math 1</li>
+              </ul>
+            </div>
         </div>
-        <div class="bg-base-200 flex justify-center items-center px-4 py-16">
-            <div id="demo" class="typing max-w-screen-md px-8 sm:px-12 md:px-8 lg:px-6 xl:px-4 py-4 text-center"></div>
+
+        <div class="card bg-base-100 w-96 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title text-center">Electrical Engineering Related Courses</h2>
+              <ul class="list-disc pl-5">
+                <li class="mb-1">ECEN248 - Introduction to Digital System Designs</li>
+                <li class="mb-1">ECEN214 - Electrical Circuit Theory</li>
+                <li class="mb-1">ECEN350 - Computer Architecture and Design</li>
+                <li class="mb-1">ECEN314 - Signals and Systems</li>
+                <li class="mb-1">
+                    ECEN325 - Electronics
+                    <span class="indicator-item badge badge-secondary">In Progress</span>
+                </li>
+              </ul>
+            </div>
+        </div>
+          
+        <div class="card bg-base-100 w-96 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title text-center">Computer Science Related Courses</h2>
+              <ul class="list-disc pl-5">
+                <li class="mb-1">ENGR102 - Engineering Lab 1 Computation</li>
+                <li class="mb-1">CSCE120 Program Design and Concepts</li>
+                <li class="mb-1">CSCE221 - Data Structure and Algorithms</li>
+                <li class="mb-1">CSCE222 - Discrete Structure Computing</li>
+                <li class="mb-1">CSCE313 - Introduction to Computer System</li>
+                <li class="mb-1">CSCE331 - Foundations of Software Engineering</li>
+                <li class="mb-1">
+                    CSCE310 - Database Systems 
+                    <span class="indicator-item badge badge-secondary">In Progress</span>
+                </li>
+                <li class="mb-1">
+                    CSCE411 - Design and Analysis of Algorithms
+                    <span class="indicator-item badge badge-secondary">In Progress</span>
+                </li>
+              </ul>
+            </div>
         </div>
 
-        <!-- My Information -->
-        <script>
-            var i = 0;
-            var txt = `Welcome to my page. I am Yuexin, a junior computer engineering major from China. I am currently studying at Texas A&M University. I chose this major because I wanted to do something that is related to software but also hardware. 
-
-I love working on projects that combine both aspects, and this past summer, I interned at Supcon Technology, where I helped train industrialized models for answering industry-specific questions, developing my interest in artificial intelligence. 
-
-I am very passionate about learning new things, and I would love to explore more areas within the field of software and hardware integration. You can learn more about the projects I have worked on by visiting the qualifications page.
-
-On campus, I am actively involved in various organizations and served as a counselor for multiple groups. I found it rewarding to help freshmen transition into college, and I made many great memories and friendships. 
-
-During my free time, I enjoy meeting new people and getting to know them better. I always try to make a positive impact by reaching out to others and remembering their names. I believe that teamwork is key to success, and I always strive to work collaboratively to achieve the best results.
-
-If you want to learn more about me or discuss job opportunities, feel free to visit the Contact Me page. My social media profiles and contact information can be found there. 
-
-Thank you for visiting my website!`;
-
-            var speed = 50; // Speed of typing
-            
-            function typeWriter() {
-              if (i < txt.length) {
-                if (txt.charAt(i) === "\n") {
-                  document.getElementById("demo").innerHTML += "<br>";
-                } else {
-                  document.getElementById("demo").innerHTML += txt.charAt(i);
-                }
-                i++;
-                setTimeout(typeWriter, speed);
-              }
-            }
-
-            // Start typing when the page loads
-            window.onload = typeWriter;
-        </script>
+        <div class="card bg-base-100 w-96 shadow-xl">
+            <div class="card-body items-center">
+              <h2 class="card-title text-center">Resume</h2>
+              <a href="pics/Zhang_Yuexin_TexasA&M.pdf" target="_blank" class="resume-link">
+                Click Here to Download My Resume (PDF)
+              </a>
+            </div>
+        </div>
     </div>
 
     <!-- Footer Section -->
