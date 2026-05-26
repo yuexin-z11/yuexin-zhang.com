@@ -1,29 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yuexin Zhang</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
-</head>
 
-<body data-theme="dark">
-    <div
-        class="hero min-h-screen"
-        style="background-image: url('/pics/background.JPG');">
-        <div class="hero-overlay bg-opacity-60"></div>
-        <div class="hero-content text-neutral-content text-center">
-        <div class="max-w-md" style="font-family: Georgia, 'Times New Roman', Times, serif;">
-            <h1 class="mb-5 text-5xl font-bold">Howdy!</h1>
-            <p class="mb-5 text-lg">
-            Welcome to my page to get to know me a little better :)
-            </p>
-            <a href="intro.html">
-                <button class="btn btn-primary">Get Started</button>
-            </a>
-        </div>
-        </div>
-    </div>
-</body>  
-</html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yuexin Zhang | Portfolio Entry</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Noto Serif Georgian -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#976aa7",
+                    "surface-container": "#fde7ff",
+                    "primary": "#b3127b",
+                    "outline-variant": "#d1a1e2",
+                    "error": "#ac3149",
+                    "tertiary-fixed": "#59c6ff",
+                    "on-secondary": "#fff6ff",
+                    "secondary": "#754ba3",
+                    "on-surface-variant": "#794f89",
+                    "on-primary-container": "#780051",
+                    "inverse-surface": "#190622",
+                    "on-secondary-container": "#673d94",
+                    "secondary-fixed": "#efdbff",
+                    "tertiary": "#00668c",
+                    "secondary-dim": "#683f95",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fff7fb",
+                    "on-tertiary-fixed-variant": "#004762",
+                    "surface-dim": "#f4cdff",
+                    "on-tertiary-fixed": "#002637",
+                    "surface-container-high": "#fae0ff",
+                    "on-primary-fixed": "#530036",
+                    "primary-fixed-dim": "#ff8fc8",
+                    "on-tertiary-container": "#003d56",
+                    "primary-container": "#ffa6d1",
+                    "on-error": "#fff7f7",
+                    "on-primary": "#fff7f8",
+                    "error-container": "#f76a80",
+                    "surface-container-low": "#ffefff",
+                    "on-background": "#492159",
+                    "on-tertiary": "#f4f9ff",
+                    "background": "#fff7fb",
+                    "on-secondary-fixed-variant": "#71479f",
+                    "surface-variant": "#f8d8ff",
+                    "inverse-primary": "#fa56b6",
+                    "on-surface": "#492159",
+                    "surface": "#fff7fb",
+                    "error-dim": "#770326",
+                    "tertiary-dim": "#00597b",
+                    "primary-fixed": "#ffa6d1",
+                    "surface-container-highest": "#f8d8ff",
+                    "surface-tint": "#b3127b",
+                    "secondary-fixed-dim": "#e5caff",
+                    "on-secondary-fixed": "#532980",
+                    "secondary-container": "#efdbff",
+                    "primary-dim": "#a0006e",
+                    "on-error-container": "#68001f",
+                    "inverse-on-surface": "#b093b7",
+                    "tertiary-fixed-dim": "#48b9f0",
+                    "tertiary-container": "#59c6ff",
+                    "on-primary-fixed-variant": "#88005c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif Georgian", "serif"],
+                    "display": ["Noto Serif Georgian", "serif"],
+                    "body": ["Noto Serif Georgian", "serif"],
+                    "label": ["Noto Serif Georgian", "serif"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .typewriter-text {
+            overflow: hidden;
+            border-right: .15em solid white;
+            white-space: nowrap;
+            letter-spacing: .05em;
+            animation: 
+                typewriter 2.5s steps(30, end),
+                blink .75s step-end infinite;
+        }
+
+        .enter-btn-fade {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .bg-overlay {
+            background: linear-gradient(to bottom, rgba(73, 33, 89, 0.4), rgba(25, 6, 34, 0.6));
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-hidden">
+<!-- Cinematic Entry Section -->
+<main class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center bg-no-repeat transition-transform duration-1000 scale-105" style="background-image: url('pics/background.JPG');">
+</div>
+<!-- Dynamic Dark Overlay -->
+<div class="absolute inset-0 bg-overlay z-10"></div>
+</div>
+<!-- Content Overlay -->
+<div class="relative z-20 text-center px-6 max-w-2xl mx-auto flex flex-col items-center">
+<!-- Identity Emblem (Subtle) -->
+<!-- <div class="mb-8 opacity-90">
+<span class="material-symbols-outlined text-surface-container text-4xl" data-icon="architecture" style="font-variation-settings: 'FILL' 0;">auto_awesome</span>
+</div> -->
+<!-- Typing Content -->
+<div class="mb-12">
+<h1 class="typewriter-text text-3xl md:text-5xl lg:text-6xl font-display font-bold text-on-primary tracking-tight leading-tight mb-6">
+                    Howdy! Welcome to my page
+                </h1>
+<p class="text-on-primary/80 font-body text-lg md:text-xl tracking-wide italic mt-8 opacity-0 transition-opacity duration-1000 delay-[2500ms]" style="opacity: 1;">
+                    Computer Engineer
+                </p>
+</div>
+<!-- Interaction Button -->
+<div class="enter-btn-fade" style="animation-delay: 2.8s;">
+<a class="group relative inline-flex items-center gap-3 px-10 py-4 bg-primary text-on-primary rounded-lg font-headline text-xl font-bold transition-all duration-300 hover:bg-primary-dim hover:scale-105 active:scale-95 shadow-xl shadow-primary/20" href="intro.html">
+<span>Enter</span>
+<span class="material-symbols-outlined text-2xl group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Scholarly Detail Decoration -->
+<div class="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-t from-primary/60 to-transparent"></div>
+</div>
+<div class="absolute top-8 right-8 z-20 text-on-primary/60">
+<div class="flex items-center gap-4">
+<span class="text-xs font-bold tracking-widest">YZ.2026</span>
+<div class="w-12 h-px bg-on-primary/30"></div>
+</div>
+</div>
+</main>
+<!-- Micro-interactions Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const enterButton = document.querySelector('.enter-btn-fade');
+            
+            // Subtle parallax effect on background image
+            window.addEventListener('mousemove', (e) => {
+                const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+                const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+                const bg = document.querySelector('.bg-cover');
+                bg.style.transform = `scale(1.05) translate(${moveX}px, ${moveY}px)`;
+            });
+
+            // Button click interaction
+            const btn = enterButton.querySelector('a');
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Create a fade-out effect for transition
+                document.body.style.transition = 'opacity 0.8s ease-in-out';
+                document.body.style.opacity = '0';
+                setTimeout(() => {
+                    // Logic for actual navigation would go here
+                    console.log('Navigating to portfolio...');
+                }, 800);
+            });
+        });
+    </script>
+</body></html>
