@@ -1,153 +1,333 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
-  <style>
-    .contact-info {
-        display: none;
-        background-color: #f1f1f1;
-        padding: 10px;
-        border-radius: 5px;
-        margin-top: 10px;
-    }
-  </style>
-</head>
 
-<body data-theme="cupcake" class="flex flex-col min-h-screen">
-    <div class="navbar bg-accent">
-        <div class="navbar-start">
-            <div class="dropdown">
-              <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h7" />
-                </svg>
-              </div>
-              <ul
-                tabindex="0"
-                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shado">
-                <li><a href="intro.html" class="font-bold">Home</a></li>
-                <li><a href="portfolio.html">Project Portfolio</a></li>
-                <li><a href="activities.html">On Campus Involvements</a></li>
-                <li><a href="hobby.html">Hobbies</a></li>
-                <li><a href="resume.html">Resume Related</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-              </ul>
-            </div>
-        </div>
-        <div class="flex-1">
-          <a class="text-xl font-bold text-primary-content absolute left-1/2 transform -translate-x-1/2">ALL ABOUT ME</a>
-        </div>
-    </div>
-    <div class="mockup-browser bg-primary border">
-        <div class="mockup-browser-toolbar">
-          <div class="input">Yuexin Zhang</div>
-        </div>
-        <div class="bg-base-200 flex justify-center items-center px-4 py-16">
-            <div id="demo" class="typing max-w-screen-md px-8 sm:px-12 md:px-8 lg:px-6 xl:px-4 py-4 text-center"></div>
-        </div>
-
-        <!-- My Information -->
-        <script>
-            var i = 0;
-            var txt = `Welcome to my page. I am Yuexin, a junior computer engineering major from China. I am currently studying at Texas A&M University. I chose this major because I wanted to do something that is related to software but also hardware. 
-
-I love working on projects that combine both aspects, and this past summer, I interned at Supcon Technology, where I helped train industrialized models for answering industry-specific questions, developing my interest in artificial intelligence. 
-
-I am very passionate about learning new things, and I would love to explore more areas within the field of software and hardware integration. You can learn more about the projects I have worked on by visiting the qualifications page.
-
-On campus, I am actively involved in various organizations and served as a counselor for multiple groups. I found it rewarding to help freshmen transition into college, and I made many great memories and friendships. 
-
-During my free time, I enjoy meeting new people and getting to know them better. I always try to make a positive impact by reaching out to others and remembering their names. I believe that teamwork is key to success, and I always strive to work collaboratively to achieve the best results.
-
-If you want to learn more about me or discuss job opportunities, feel free to visit the Contact Me page. My social media profiles and contact information can be found there. 
-
-Thank you for visiting my website!`;
-
-            var speed = 50; // Speed of typing
-            
-            function typeWriter() {
-              if (i < txt.length) {
-                if (txt.charAt(i) === "\n") {
-                  document.getElementById("demo").innerHTML += "<br>";
-                } else {
-                  document.getElementById("demo").innerHTML += txt.charAt(i);
-                }
-                i++;
-                setTimeout(typeWriter, speed);
-              }
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yuexin Zhang | Computer Engineering Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#fff7f8",
+                    "on-tertiary": "#f4f9ff",
+                    "outline-variant": "#d1a1e2",
+                    "background": "#fff7fb",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#f8d8ff",
+                    "surface-dim": "#f4cdff",
+                    "inverse-primary": "#fa56b6",
+                    "error": "#ac3149",
+                    "outline": "#976aa7",
+                    "on-surface": "#492159",
+                    "on-tertiary-fixed-variant": "#004762",
+                    "surface-tint": "#b3127b",
+                    "surface-bright": "#fff7fb",
+                    "primary-container": "#ffa6d1",
+                    "tertiary-fixed-dim": "#48b9f0",
+                    "surface": "#fff7fb",
+                    "error-dim": "#770326",
+                    "tertiary-container": "#59c6ff",
+                    "secondary-fixed-dim": "#e5caff",
+                    "on-secondary-container": "#673d94",
+                    "on-primary-fixed-variant": "#88005c",
+                    "on-error-container": "#68001f",
+                    "primary-fixed-dim": "#ff8fc8",
+                    "on-primary-container": "#780051",
+                    "on-primary-fixed": "#530036",
+                    "on-error": "#fff7f7",
+                    "on-secondary-fixed-variant": "#71479f",
+                    "secondary-container": "#efdbff",
+                    "tertiary": "#00668c",
+                    "inverse-on-surface": "#b093b7",
+                    "tertiary-dim": "#00597b",
+                    "primary-fixed": "#ffa6d1",
+                    "on-tertiary-container": "#003d56",
+                    "on-surface-variant": "#794f89",
+                    "surface-container-low": "#ffefff",
+                    "on-secondary-fixed": "#532980",
+                    "secondary-fixed": "#efdbff",
+                    "surface-container-highest": "#f8d8ff",
+                    "on-tertiary-fixed": "#002637",
+                    "secondary-dim": "#683f95",
+                    "surface-container": "#fde7ff",
+                    "on-background": "#492159",
+                    "tertiary-fixed": "#59c6ff",
+                    "primary": "#b3127b",
+                    "inverse-surface": "#190622",
+                    "on-secondary": "#fff6ff",
+                    "surface-container-high": "#fae0ff",
+                    "secondary": "#754ba3",
+                    "primary-dim": "#a0006e",
+                    "error-container": "#f76a80"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif Georgian"],
+                    "display": ["Noto Serif Georgian"],
+                    "body": ["Noto Serif Georgian"],
+                    "label": ["Noto Serif Georgian"]
             }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Noto Serif Georgian', serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 247, 251, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(179, 18, 123, 0.1);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 0% 0%, #fff7fb 0%, #fde7ff 100%);
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md shadow-sm border-b border-outline-variant/20">
+<nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-display font-bold tracking-tight text-primary">Yuexin Zhang</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="portfolio.html">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="activities.html">Involvements</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="hobby.html">Interests</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="resume.html">Resume</a>
+</div>
+<a href="contact.html">
+    <button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-medium hover:scale-95 transition-transform">
+            Contact
+        </button>
+</a>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="hero-gradient min-h-[819px] flex flex-col justify-center px-6 relative overflow-hidden">
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<span class="text-secondary font-medium tracking-widest uppercase text-sm mb-4 block">Computer Engineering</span>
+<h1 class="text-5xl md:text-7xl font-display font-bold text-on-surface leading-tight mb-6">
+                    Engineering the <span class="text-primary italic">infrastructure</span> behind intelligent computing.
+                </h1>
+<p class="text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                    Focused on distributed systems, ML-driven optimization, infrastructure engineering, and performance analysis for large-scale computing environments.
+                </p>
+<div class="flex flex-wrap gap-4">
+<a href="portfolio.html">
+    <button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:shadow-xl transition-all">
+                        View Projects
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+    </button>
+</a>
+<a href="resume.html">
+   <button class="border-2 border-secondary text-secondary px-8 py-4 rounded-xl font-bold hover:bg-secondary/5 transition-all">
+                        Resume
+                    </button> 
+</a>
+</div>
+</div>
+<div class="relative hidden lg:block">
+<div class="absolute inset-0 bg-primary/5 rounded-[3rem] rotate-3 scale-105 blur-2xl"></div>
+<img alt="Technical Architecture Detail" class="rounded-[2rem] w-full h-[600px] object-cover shadow-2xl relative z-10 border-4 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk8Fx3WrBbWnwGUheNKu6v6WwxE0sBQLj1lZoH3O8tRnLodz8WtsEuQuzcvz4KLQxGwKUkl7e2oX9DQ81twqdsM5l0-NeothsMvqTmX5glz6joDUU7FvmSwn2ZrX94VEpBC0Mh8cb08SBgySO3sGQ34c3pjXIylimpcNcorN7mBepWKDPli3jS--vUx1UkyA9oZRFPbIv2SWgOKGLsFqP855UKXpAiWVlGqZu3ZuZgfQ6znXGkU0OOjqhpWPoCt0i2BFrnbhx3DTsG"/>
+</div>
+</div>
+</section>
+<!-- Featured Works Section (Redesigned) -->
+<section class="py-32 px-6 max-w-7xl mx-auto">
+<div class="mb-20">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<h2 class="text-4xl md:text-5xl font-display font-bold text-on-surface mb-4 italic">Featured Works</h2>
+<div class="h-1.5 w-24 bg-primary rounded-full mb-6"></div>
+<p class="text-on-surface-variant text-lg leading-relaxed">Designing intelligent computing systems that combine scalable infrastructure, data-driven analysis, and performance optimization.</p>
+</div>
+<a class="inline-flex items-center gap-2 text-primary font-bold group" href="#">
+                    View Full Portfolio 
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="east">east</span>
+</a>
+</div>
+</div>
+<div class="project-grid">
+<!-- Star Project: RISC-V Multicore -->
+<div class="col-span-12 lg:col-span-8">
+<div class="group relative overflow-hidden rounded-[2.5rem] bg-surface-container border border-outline/10 shadow-lg hover:shadow-2xl transition-all duration-500 h-full flex flex-col md:flex-row">
+<!-- Text Side -->
+<div class="p-10 md:p-14 flex-1 flex flex-col justify-between relative z-10">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<span class="px-4 py-1 rounded-full bg-primary-container text-on-primary-container text-xs font-bold tracking-widest uppercase">Star Project</span>
+<span class="px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase">Distributed Systems</span>
+</div>
+<h3 class="text-4xl md:text-5xl font-display font-bold text-on-surface mb-6 leading-tight">CloudMesh-Distributed Backend Infrastructure Platform</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8 max-w-lg">
+                                Building a distributed backend system using Go, AWS, Docker, and Redis to explore asynchronous processing, load balancing, failure recovery, and performance behavior under production-style cloud workloads.
+                            </p>
+<div class="flex flex-wrap gap-3 mb-10">
+<span class="bg-surface-variant/50 px-3 py-1 rounded border border-outline/5 text-sm font-medium">Go</span>
+<span class="bg-surface-variant/50 px-3 py-1 rounded border border-outline/5 text-sm font-medium">AWS</span>
+<span class="bg-surface-variant/50 px-3 py-1 rounded border border-outline/5 text-sm font-medium">Docker</span>
+<span class="bg-surface-variant/50 px-3 py-1 rounded border border-outline/5 text-sm font-medium">Redis</span>
+<span class="bg-surface-variant/50 px-3 py-1 rounded border border-outline/5 text-sm font-medium">Load Balancing</span>
+</div>
+</div>
+<a href="projects.html"
+   class="self-start inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-3 rounded-full font-bold hover:scale-105 transition-all">
 
-            // Start typing when the page loads
-            window.onload = typeWriter;
-        </script>
-    </div>
+    Technical Deep Dive
+    <span class="material-symbols-outlined text-sm">
+        open_in_new
+    </span>
 
-    <!-- Footer Section -->
-    <footer class="footer footer-center bg-accent text-primary-content p-10 mt-auto">
-        <aside>
-            <img
-                src="pics/YZ.png" 
-                alt="My custom image"
-                width="50"
-                height="50"
-                class="inline-block"
-            />
-            <p class="font-bold">
-                Created by Yuexin Zhang
-            </p>
-        </aside>        
-        <nav>
-          <!-- Icon Section -->
-            <div class="grid grid-flow-col gap-4">
-              <a href="#" onclick="showContactInfo('email')">
-                  <img class="mask mask-squircle" width="40" height="40" src="pics/email.png" alt="Email">
-              </a>
-              <a href="#" onclick="showContactInfo('phone')">
-                  <img class="mask mask-squircle" width="40" height="40" src="pics/phone.png" alt="Phone">
-              </a>
-              <a href="#" onclick="showContactInfo('linkedin')">
-                  <img class="mask mask-squircle" width="40" height="40" src="pics/linkedin.png" alt="LinkedIn">
-              </a>
-          </div>
+</a>
+</div>
+<!-- Decorative/Icon side for High-end feel -->
+<div class="hidden md:flex w-1/3 bg-secondary/5 items-center justify-center relative overflow-hidden">
+<span class="material-symbols-outlined text-[20rem] text-secondary/10 absolute -right-20 -bottom-20 rotate-12" data-icon="memory">memory</span>
+<div class="relative z-10 p-8 text-center">
+<div class="text-secondary font-bold text-6xl mb-2">03</div>
+<div class="text-secondary/60 text-xs font-bold uppercase tracking-[0.2em]">API Nodes</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Supporting Project: Kernel-Level Scheduler -->
+<div class="col-span-12 lg:col-span-4">
+<div class="group h-full bg-white rounded-[2.5rem] border border-outline/10 p-10 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-500">
+<div>
+<div class="w-12 h-12 bg-tertiary-container rounded-2xl flex items-center justify-center text-on-tertiary-container mb-8">
+<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
+</div>
+<h4 class="text-2xl font-display font-bold text-on-surface mb-4">HARDEN</h4>
+<p class="text-on-surface-variant leading-relaxed mb-6">
+                            Developed a hardware-assisted intrusion detection platform for IoT systems using Python, machine learning, and ARM64 Raspberry Pi infrastructure.
+                        </p>
+</div>
+<div class="flex items-center justify-between mt-8 border-t border-outline-variant/20 pt-6">
+<span class="text-xs font-bold text-secondary uppercase tracking-wider">Python</span>
+<a class="text-primary font-bold inline-flex items-center gap-1 text-sm hover:underline" href="https://github.com/jackflc/csce-483-harden">
+                            GitHub Repo <span class="material-symbols-outlined text-[1rem]" data-icon="arrow_outward">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Academic & Philosophy Section -->
+<section class="bg-surface-container py-24 px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+<div class="md:w-1/2">
+<h2 class="text-4xl font-display font-bold text-on-surface mb-8">An Engineering Approach to Systems</h2>
+<div class="space-y-6 text-lg text-on-surface-variant leading-relaxed italic">
+<p>
+                        "I believe effective computing systems are built through understanding how complex software, data, and infrastructure interact under real-world conditions."
+                    </p>
+<p class="not-italic text-base">
+                        My work combines systems engineering, software development, and data-driven analysis to build scalable and reliable computing environments. From backend architectures to intelligent system optimization, I prioritize clarity, performance, and practical engineering impact.
+                    </p>
+</div>
+<div class="mt-10 grid grid-cols-2 gap-6">
+<div class="p-6 bg-white rounded-2xl shadow-sm">
+<span class="text-primary font-bold text-3xl block mb-1">3.7+</span>
+<span class="text-sm text-on-surface-variant uppercase tracking-wider">Graduate GPA</span>
+</div>
+<div class="p-6 bg-white rounded-2xl shadow-sm">
+<span class="text-primary font-bold text-3xl block mb-1">2+</span>
+<span class="text-sm text-on-surface-variant uppercase tracking-wider">Systems Projects In Progress</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 relative">
+<div class="aspect-square bg-gradient-to-tr from-primary to-secondary rounded-[3rem] p-1">
+<div class="w-full h-full bg-white rounded-[2.8rem] flex items-center justify-center overflow-hidden">
+<img alt="System Design Sketch" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAWAKPJ6BNRMf9k87MNumdOE5-F_4CPHjB2yuzG5NawvzLURLFx4mYdEORn0MHHPv-K6l0jN1-yWLccqnenZbUKUR5uFo_RwPvQfkC5MsANhDPrjGQmYXKWFJldA75Bhd2jZTbV29PmxuE_PWYEueIorNLfVRUgXqHo8PXrCgz9AHQPtDjnXf4pzgE40huCcntC6SiCK4wkEwmWINd2uKWjEE1m2ikEETyuxjzKM-yfBCyXsyKDgG-ArAsU98llxxtqzk1S5V-sutL"/>
+</div>
+</div>
+<!-- Floating Badge -->
+<div class="absolute -bottom-6 -left-6 bg-secondary text-on-secondary p-8 rounded-2xl shadow-2xl max-w-[200px]">
+<span class="material-symbols-outlined text-4xl mb-2" data-icon="workspace_premium">workspace_premium</span>
+<p class="font-bold text-sm">Awarded Dean's Honor Roll</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-6 text-center">
+<div class="max-w-4xl mx-auto glass-card p-16 rounded-[3rem] border-2 border-dashed border-primary/20">
+<h2 class="text-3xl md:text-5xl font-display font-bold text-on-surface mb-6">Let's connect!</h2>
+<p class="text-xl text-on-surface-variant mb-10">Open to research collaborations, technical discussions, and engineering opportunities.</p>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="flex items-center gap-3 text-2xl font-bold text-primary hover:underline" href="mailto:contact@yuexin.engineering">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+                    yuexin.z.jobs@gmail.com
+                </a>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 px-6 py-12 max-w-7xl mx-auto">
+<div>
+<div class="font-headline font-bold text-on-surface mb-2">Yuexin Zhang</div>
+<p class="font-body text-sm text-on-surface-variant">Computer Engineering · Distributed Systems · Intelligent Infrastructure</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="https://www.linkedin.com/in/yuexin-zhang?utm_source=share_via&utm_content=profile&utm_medium=member_ios">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="https://github.com/yuexin-z11">GitHub</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="mailto:yuexin.z.jobs@gmail.com">Email</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="https://www.instagram.com/yuexinzhang1314?igsh=bXdxNTVicWd2bDM4&utm_source=qr">Instagram</a>
+</div>
+</div>
+</footer>
+<a href="contact.html">
+    <button class="fixed bottom-8 right-8 bg-primary text-on-primary w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+    <span class="material-symbols-outlined" data-icon="article">article</span>
+    </button>
+</a>
+<script>
+    // Micro-interactions
+    document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mousedown', () => {
+            el.style.transform = 'scale(0.97)';
+        });
+        el.addEventListener('mouseup', () => {
+            el.style.transform = '';
+        });
+    });
 
-          <!-- Contact Information Section -->
-          <div id="email-info" class="contact-info">
-              <p>Email: yuexin.z.jobs@gmail.com</p>
-          </div>
-          <div id="phone-info" class="contact-info">
-              <p>Phone: +1 (806)392-4012</p>
-          </div>
-          <div id="linkedin-info" class="contact-info">
-              <p>LinkedIn: <a href="https://www.linkedin.com/in/yuexin-zhang-31190a25a/" target="_blank">LinkedIn Profile</a></p>
-          </div>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, { threshold: 0.1 });
 
-          <script>
-              function showContactInfo(type) {
-                  const allContactInfo = document.querySelectorAll('.contact-info');
-                  allContactInfo.forEach(info => {
-                      info.style.display = 'none';
-                  });
-
-                  const contactInfo = document.getElementById(`${type}-info`);
-                  if (contactInfo) {
-                      contactInfo.style.display = 'block';
-                  }
-              }
-          </script>
-        </nav>
-    </footer>
-</body>
-</html>
+    document.querySelectorAll('.glass-card, .group').forEach(el => {
+        if (!el.classList.contains('absolute')) {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        }
+    });
+</script>
+</body></html>
