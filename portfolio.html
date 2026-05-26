@@ -194,6 +194,20 @@
     </h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <!-- Project 1 -->
+<div class="group cursor-pointer glass-card p-8 rounded-xl hover:bg-surface-container-highest transition-all duration-300 border-l-4 border-secondary shadow-sm hover:shadow-lg" onclick="openModal('kernel')">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="settings_suggest">security</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">Embedded Cybersecurity</span>
+</div>
+<h3 class="text-2xl font-display font-bold mb-4">HARDEN — Hardware-Assisted Real-time Detection & Enforcement Network</h3>
+<p class="text-on-surface-variant text-sm mb-8 line-clamp-3">
+          A hardware-assisted cybersecurity platform optimized for real-time intrusion detection and embedded edge-device monitoring.
+        </p>
+<div class="flex items-center gap-2 text-tertiary font-bold text-sm mt-auto">
+          View Specifications <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Project 2 -->
 <div class="group cursor-pointer glass-card p-8 rounded-xl hover:bg-surface-container-highest transition-all duration-300 border-l-4 border-primary shadow-sm hover:shadow-lg" onclick="openModal('consensus')">
 <div class="flex justify-between items-start mb-6">
 <span class="material-symbols-outlined text-primary text-3xl" data-icon="hub">point_of_sale</span>
@@ -207,7 +221,7 @@
           View Specifications <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
 </div>
 </div>
-<!-- Project 2 -->
+<!-- Project 3 -->
 <div class="group cursor-pointer glass-card p-8 rounded-xl hover:bg-surface-container-highest transition-all duration-300 border-l-4 border-tertiary shadow-sm hover:shadow-lg" onclick="openModal('kernel')">
 <div class="flex justify-between items-start mb-6">
 <span class="material-symbols-outlined text-tertiary text-3xl" data-icon="settings_suggest">event</span>
@@ -221,7 +235,7 @@
           View Specifications <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
 </div>
 </div>
-<!-- Project 3 -->
+<!-- Project 4 -->
 <div class="group cursor-pointer glass-card p-8 rounded-xl hover:bg-surface-container-highest transition-all duration-300 border-l-4 border-secondary shadow-sm hover:shadow-lg" onclick="openModal('profiler')">
 <div class="flex justify-between items-start mb-6">
 <span class="material-symbols-outlined text-secondary text-3xl" data-icon="monitoring">developer_board</span>
@@ -331,6 +345,23 @@
             { label: "Architecture", value: "Distributed", sub: "Cloud computing platform" },
             { label: "Scalability", value: "Multi-Node", sub: "Cluster orchestration" },
             { label: "Environment", value: "Cloud + HPC", sub: "Hybrid infrastructure" }
+        ],
+        links: { github: "#", docs: "#" }
+      },
+      harden: {
+        title: "HARDEN — Hardware-Assisted Real-time Detection & Enforcement Network",
+        description: "Developed a hardware-assisted cybersecurity and anomaly detection platform for embedded and IoT systems, emphasizing real-time threat detection, multi-modal telemetry processing, and machine learning deployment on ARM64-based Raspberry Pi infrastructure.",
+        specs: [
+          "Built machine learning pipelines for embedded cybersecurity and anomaly detection.",
+          "Implemented telemetry collection and real-time event analysis on ARM64 devices.",
+          "Designed edge-device infrastructure using Raspberry Pi embedded systems.",
+          "Optimized low-latency threat detection workflows for IoT environments.",
+          "Integrated embedded Linux systems with scalable cybersecurity architecture."
+        ],
+        metrics: [
+          { label: "Processing", value: "Multi-Modal", sub: "Telemetry analysis pipeline" },
+          { label: "Deployment", value: "Embedded Linux", sub: "ARM64 edge devices" },
+          { label: "Focus", value: "Cybersecurity", sub: "Threat detection & enforcement" }
         ],
         links: { github: "#", docs: "#" }
       },
