@@ -143,16 +143,13 @@
 </div> -->
 <!-- Typing Content -->
 <div class="mb-12">
-<h1 class="typewriter-text text-3xl md:text-5xl lg:text-6xl font-display font-bold text-on-primary tracking-tight leading-tight mb-6">
+<h1 class="typewriter-text text-3xl md:text-5xl lg:text-6xl font-display font-bold text-on-primary tracking-tight leading-[1.3] pb-3">
                     Howdy! Welcome to my page
                 </h1>
-<p class="text-on-primary/80 font-body text-lg md:text-xl tracking-wide italic mt-8 opacity-0 transition-opacity duration-1000 delay-[2500ms]" style="opacity: 1;">
-                    Computer Engineer
-                </p>
 </div>
 <!-- Interaction Button -->
 <div class="enter-btn-fade" style="animation-delay: 2.8s;">
-<a class="group relative inline-flex items-center gap-3 px-10 py-4 bg-primary text-on-primary rounded-lg font-headline text-xl font-bold transition-all duration-300 hover:bg-primary-dim hover:scale-105 active:scale-95 shadow-xl shadow-primary/20" href="intro.html">
+<a href="intro.html" class="group relative inline-flex items-center gap-3 px-10 py-4 bg-primary text-on-primary rounded-lg font-headline text-xl font-bold transition-all duration-300 hover:bg-primary-dim hover:scale-105 active:scale-95 shadow-xl shadow-primary/20">
 <span>Enter</span>
 <span class="material-symbols-outlined text-2xl group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
 </a>
@@ -169,29 +166,21 @@
 </main>
 <!-- Micro-interactions Script -->
 <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const enterButton = document.querySelector('.enter-btn-fade');
-            
-            // Subtle parallax effect on background image
-            window.addEventListener('mousemove', (e) => {
-                const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-                const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-                const bg = document.querySelector('.bg-cover');
-                bg.style.transform = `scale(1.05) translate(${moveX}px, ${moveY}px)`;
-            });
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.querySelector('.enter-btn-fade a');
 
-            // Button click interaction
-            const btn = enterButton.querySelector('a');
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                // Create a fade-out effect for transition
-                document.body.style.transition = 'opacity 0.8s ease-in-out';
-                document.body.style.opacity = '0';
-                setTimeout(() => {
-                    // Logic for actual navigation would go here
-                    console.log('Navigating to portfolio...');
-                }, 800);
-            });
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Fade out transition
+            document.body.style.transition = 'opacity 0.8s ease-in-out';
+            document.body.style.opacity = '0';
+
+            // Navigate to intro page
+            setTimeout(() => {
+                window.location.href = 'intro.html';
+            }, 800);
         });
-    </script>
+    });
+</script>
 </body></html>
