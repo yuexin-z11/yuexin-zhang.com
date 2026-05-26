@@ -244,7 +244,7 @@
                         My work combines systems engineering, software development, and data-driven analysis to build scalable and reliable computing environments. From backend architectures to intelligent system optimization, I prioritize clarity, performance, and practical engineering impact.
                     </p>
 </div>
-<div class="mt-10 grid grid-cols-2 gap-6">
+<!-- <div class="mt-10 grid grid-cols-2 gap-6">
 <div class="p-6 bg-white rounded-2xl shadow-sm">
 <span class="text-primary font-bold text-3xl block mb-1">3.7+</span>
 <span class="text-sm text-on-surface-variant uppercase tracking-wider">Graduate GPA</span>
@@ -253,27 +253,41 @@
 <span class="text-primary font-bold text-3xl block mb-1">2+</span>
 <span class="text-sm text-on-surface-variant uppercase tracking-wider">Systems Projects In Progress</span>
 </div>
-</div>
+</div> -->
 </div>
 <div class="md:w-1/2 relative">
 <div class="aspect-square bg-gradient-to-tr from-primary to-secondary rounded-[3rem] p-1">
 <div class="w-full h-full bg-white rounded-[2.8rem] flex items-center justify-center overflow-hidden">
-<img alt="System Design Sketch" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAWAKPJ6BNRMf9k87MNumdOE5-F_4CPHjB2yuzG5NawvzLURLFx4mYdEORn0MHHPv-K6l0jN1-yWLccqnenZbUKUR5uFo_RwPvQfkC5MsANhDPrjGQmYXKWFJldA75Bhd2jZTbV29PmxuE_PWYEueIorNLfVRUgXqHo8PXrCgz9AHQPtDjnXf4pzgE40huCcntC6SiCK4wkEwmWINd2uKWjEE1m2ikEETyuxjzKM-yfBCyXsyKDgG-ArAsU98llxxtqzk1S5V-sutL"/>
+<img alt="System Design Sketch" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAWAKPJ6BNRMf9k87MNumdOE5-F_4CPHjB2yuzG5NawvzLURLFx4mYdEORn0MHHPv-K6l0jN1-yWLccqnenZbUKUR5uFo_RwPvQfkC5MsANhDPrjGQmYXKWFJldA75Bhd2jZTbV29PmxuE_PWYEueIorNLfVRUgXqHo8PXrCgz9AHQPtDjnXf4pzgE40huCcntC6SiCK4wkEwmWINd2uKWjEE1m2ikEETyuxjzKM-yfBCyXsyKDgG-ArAsU98llxxtqzk1S5V-sutL"/>
 </div>
 </div>
 <!-- Floating Badge -->
-<div class="absolute -bottom-6 -left-6 bg-secondary text-on-secondary p-8 rounded-2xl shadow-2xl max-w-[200px]">
+<!-- <div class="absolute -bottom-6 -left-6 bg-secondary text-on-secondary p-8 rounded-2xl shadow-2xl max-w-[200px]">
 <span class="material-symbols-outlined text-4xl mb-2" data-icon="workspace_premium">workspace_premium</span>
 <p class="font-bold text-sm">Awarded Dean's Honor Roll</p>
+</div> -->
 </div>
 </div>
-</div>
+</section>
+<!-- Technical Skillset Ticker (Subtle) -->
+<section class="max-w-7xl mx-auto px-6 mt-24 mb-12 overflow-hidden py-12 border-y border-outline-variant/30">
+    <div class="flex gap-16 whitespace-nowrap animate-marquee">
+        <span class="text-4xl font-display font-black text-outline/20 uppercase tracking-widest">Python</span>
+        <span class="text-4xl font-display font-black text-outline/20 uppercase tracking-widest">C++</span>
+        <span class="text-4xl font-display font-black text-outline/20 uppercase tracking-widest">Linux</span>
+        <span class="text-4xl font-display font-black text-outline/20 uppercase tracking-widest">Raspberry Pi</span>
+        <span class="text-4xl font-display font-black text-outline/20 uppercase tracking-widest">Machine Learning</span>
+        <span class="text-4xl font-display font-black text-outline/20 uppercase tracking-widest">IoT Systems</span>
+        <span class="text-4xl font-display font-black text-outline/20 uppercase tracking-widest">AWS</span>
+        <span class="text-4xl font-display font-black text-outline/20 uppercase tracking-widest">PostgreSQL</span>
+        <span class="text-4xl font-display font-black text-outline/20 uppercase tracking-widest">Docker</span>
+    </div>
 </section>
 <!-- CTA Section -->
 <section class="py-24 px-6 text-center">
 <div class="max-w-4xl mx-auto glass-card p-16 rounded-[3rem] border-2 border-dashed border-primary/20">
 <h2 class="text-3xl md:text-5xl font-display font-bold text-on-surface mb-6">Let's connect!</h2>
-<p class="text-xl text-on-surface-variant mb-10">Open to research collaborations, technical discussions, and engineering opportunities.</p>
+<p class="text-xl text-on-surface-variant mb-10">Open to engineering internships, research collaborations, and technical discussions.</p>
 <div class="flex flex-wrap justify-center gap-6">
 <a class="flex items-center gap-3 text-2xl font-bold text-primary hover:underline" href="mailto:contact@yuexin.engineering">
 <span class="material-symbols-outlined" data-icon="mail">mail</span>
@@ -302,6 +316,15 @@
     <span class="material-symbols-outlined" data-icon="article">article</span>
     </button>
 </a>
+<style>
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+    </style>
 <script>
     // Micro-interactions
     document.querySelectorAll('a, button').forEach(el => {
