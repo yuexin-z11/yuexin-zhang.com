@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Message Received | Yuexin Zhang Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffa6d1",
+                    "on-secondary-fixed": "#532980",
+                    "secondary": "#754ba3",
+                    "tertiary-dim": "#00597b",
+                    "tertiary-fixed-dim": "#48b9f0",
+                    "tertiary-container": "#59c6ff",
+                    "error-dim": "#770326",
+                    "surface-tint": "#b3127b",
+                    "on-surface": "#492159",
+                    "on-error": "#fff7f7",
+                    "error": "#ac3149",
+                    "surface-container-low": "#ffefff",
+                    "surface": "#fff7fb",
+                    "secondary-fixed": "#efdbff",
+                    "background": "#fff7fb",
+                    "primary-dim": "#a0006e",
+                    "error-container": "#f76a80",
+                    "on-surface-variant": "#794f89",
+                    "on-secondary-fixed-variant": "#71479f",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#fae0ff",
+                    "on-tertiary-container": "#003d56",
+                    "on-error-container": "#68001f",
+                    "inverse-primary": "#fa56b6",
+                    "inverse-on-surface": "#b093b7",
+                    "primary-fixed-dim": "#ff8fc8",
+                    "surface-container": "#fde7ff",
+                    "outline": "#976aa7",
+                    "on-tertiary-fixed-variant": "#004762",
+                    "on-background": "#492159",
+                    "primary-container": "#ffa6d1",
+                    "on-secondary-container": "#673d94",
+                    "on-primary-fixed-variant": "#88005c",
+                    "on-tertiary-fixed": "#002637",
+                    "surface-variant": "#f8d8ff",
+                    "surface-dim": "#f4cdff",
+                    "secondary-dim": "#683f95",
+                    "tertiary": "#00668c",
+                    "on-primary-container": "#780051",
+                    "on-secondary": "#fff6ff",
+                    "tertiary-fixed": "#59c6ff",
+                    "surface-container-highest": "#f8d8ff",
+                    "surface-bright": "#fff7fb",
+                    "secondary-container": "#efdbff",
+                    "on-tertiary": "#f4f9ff",
+                    "on-primary-fixed": "#530036",
+                    "inverse-surface": "#190622",
+                    "outline-variant": "#d1a1e2",
+                    "secondary-fixed-dim": "#e5caff",
+                    "primary": "#b3127b",
+                    "on-primary": "#fff7f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif Georgian"],
+                    "display": ["Noto Serif Georgian"],
+                    "body": ["Noto Serif Georgian"],
+                    "label": ["Noto Serif Georgian"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Noto Serif Georgian', serif;
+        }
+        .bento-shape {
+            clip-path: polygon(0% 15%, 100% 0%, 100% 85%, 0% 100%);
+        }
+        .canvas-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(179, 18, 123, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed-variant">
+<!-- TopNavBar: Suppressed navigation for transactional focus, simplified logo state -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<span class="text-2xl font-display font-bold tracking-tight text-primary">Yuexin Zhang</span>
+<div class="hidden md:flex items-center gap-8">
+<span class="text-on-surface-variant font-body text-sm italic">Computer Engineering Portfolio</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center pt-24 pb-12 px-6 canvas-bg">
+<div class="max-w-4xl w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<!-- Left Decorative Column (Bento Style) -->
+<div class="hidden md:block md:col-span-5 relative">
+<div class="bg-surface-container rounded-xl aspect-[4/5] overflow-hidden shadow-sm relative group">
+<img 
+  src="pics/grad.jpg"
+  alt="Yuexin Zhang"
+  class="w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-700"
+/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+<div class="absolute bottom-6 left-6 p-4 bg-surface/90 backdrop-blur-sm rounded-lg border-l-4 border-primary shadow-lg">
+<p class="text-primary font-bold text-lg leading-tight">Innovation starts with a conversation.</p>
+</div>
+</div>
+</div>
+<!-- Right Message Column -->
+<div class="md:col-span-7 flex flex-col justify-center text-center md:text-left space-y-8">
+<div class="space-y-4">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-container text-on-primary-container mb-4">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h1 class="text-5xl md:text-6xl font-display font-extrabold text-on-surface tracking-tight leading-[1.1]">
+                        Thank You for Reaching Out!
+                    </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant leading-relaxed max-w-xl">
+                        Your message has been successfully received. I appreciate your interest.
+                    </p>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/30 flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary mt-1">schedule</span>
+<div class="text-left">
+<p class="font-bold text-on-surface">What's Next?</p>
+<p class="text-on-surface-variant">I usually respond within 48 hours. In the meantime, feel free to explore more of my recent engineering projects.</p>
+</div>
+</div>
+<div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+<a class="px-10 py-4 bg-primary text-on-primary rounded-full font-bold text-lg shadow-lg hover:shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2" href="intro.html">
+<span class="material-symbols-outlined">home</span>
+                        Return Home
+                    </a>
+<a class="px-10 py-4 border-2 border-secondary text-secondary rounded-full font-bold text-lg hover:bg-secondary/5 transition-all flex items-center justify-center gap-2" href="projects.html">
+                        View Projects
+                    </a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer: Anchored with styles from JSON -->
+<footer class="bg-surface-container">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 px-6 py-12 max-w-7xl mx-auto">
+<div>
+<div class="font-headline font-bold text-on-surface mb-2">Yuexin Zhang</div>
+<p class="font-body text-sm text-on-surface-variant">Computer Engineering · Distributed Systems · Intelligent Infrastructure</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="https://www.linkedin.com/in/yuexin-zhang?utm_source=share_via&utm_content=profile&utm_medium=member_ios">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="https://github.com/yuexin-z11">GitHub</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="mailto:yuexin.z.jobs@gmail.com">Email</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="https://www.instagram.com/yuexinzhang1314?igsh=bXdxNTVicWd2bDM4&utm_source=qr">Instagram</a>
+</div>
+</div>
+</footer>
+</body></html>

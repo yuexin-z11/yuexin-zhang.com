@@ -1,460 +1,609 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
-  <style>
-    .contact-info {
-        display: none;
-        background-color: #f1f1f1;
-        padding: 10px;
-        border-radius: 5px;
-        margin-top: 10px;
-    }
-  </style>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Involvement &amp; Leadership | Yuexin Zhang</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#f8d8ff",
+                    "secondary-dim": "#683f95",
+                    "on-tertiary-fixed": "#002637",
+                    "on-tertiary-container": "#003d56",
+                    "on-error-container": "#68001f",
+                    "tertiary": "#00668c",
+                    "primary-dim": "#a0006e",
+                    "on-secondary-fixed": "#532980",
+                    "primary-fixed": "#ffa6d1",
+                    "on-primary-container": "#780051",
+                    "inverse-surface": "#190622",
+                    "on-primary-fixed": "#530036",
+                    "secondary-fixed-dim": "#e5caff",
+                    "inverse-on-surface": "#b093b7",
+                    "secondary-fixed": "#efdbff",
+                    "on-secondary": "#fff6ff",
+                    "error": "#ac3149",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#ffefff",
+                    "surface-dim": "#f4cdff",
+                    "on-error": "#fff7f7",
+                    "tertiary-container": "#59c6ff",
+                    "surface-container": "#fde7ff",
+                    "surface": "#fff7fb",
+                    "tertiary-fixed": "#59c6ff",
+                    "outline-variant": "#d1a1e2",
+                    "on-secondary-container": "#673d94",
+                    "surface-variant": "#f8d8ff",
+                    "on-tertiary-fixed-variant": "#004762",
+                    "error-dim": "#770326",
+                    "background": "#fff7fb",
+                    "outline": "#976aa7",
+                    "tertiary-fixed-dim": "#48b9f0",
+                    "primary-container": "#ffa6d1",
+                    "tertiary-dim": "#00597b",
+                    "on-primary-fixed-variant": "#88005c",
+                    "error-container": "#f76a80",
+                    "surface-container-high": "#fae0ff",
+                    "inverse-primary": "#fa56b6",
+                    "on-tertiary": "#f4f9ff",
+                    "on-background": "#492159",
+                    "surface-tint": "#b3127b",
+                    "on-surface": "#492159",
+                    "primary-fixed-dim": "#ff8fc8",
+                    "on-surface-variant": "#794f89",
+                    "on-secondary-fixed-variant": "#71479f",
+                    "primary": "#b3127b",
+                    "surface-bright": "#fff7fb",
+                    "secondary": "#754ba3",
+                    "secondary-container": "#efdbff",
+                    "on-primary": "#fff7f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif Georgian"],
+                    "display": ["Noto Serif Georgian"],
+                    "body": ["Noto Serif Georgian"],
+                    "label": ["Noto Serif Georgian"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Noto Serif Georgian', serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #d1a1e2 0%, #976aa7 50%, #d1a1e2 100%);
+            border-radius: 9999px;
+            z-index: 0;
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before { left: 32px; }
+        }
+        .glass-card {
+            background: rgba(255, 247, 251, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(209, 161, 226, 0.3);
+        }
+        .timeline-marker {
+            box-shadow: 0 0 0 4px rgba(179, 18, 123, 0.2);
+        }
+        .timeline-entry {
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .timeline-entry.hidden-entry {
+            display: none !important;
+        }
+        /* Dynamic alternating pattern based on visible children */
+        .timeline-container > .timeline-entry:nth-child(even) .timeline-content-wrapper {
+            flex-direction: row-reverse;
+        }
+        .timeline-container > .timeline-entry:nth-child(even) .timeline-text {
+            text-align: left;
+            padding-right: 0;
+            padding-left: 3rem;
+        }
+        .timeline-container > .timeline-entry:nth-child(odd) .timeline-text {
+            text-align: right;
+            padding-left: 0;
+            padding-right: 3rem;
+        }
+        .filter-btn.active {
+            background-color: #b3127b;
+            color: #fff7f8;
+            box-shadow: 0 4px 12px rgba(179, 18, 123, 0.3);
+            border-color: #b3127b;
+        }
+
+        /* Responsive adjustments for the new grid logic */
+        @media (max-width: 768px) {
+            .timeline-container > .timeline-entry .timeline-content-wrapper {
+                flex-direction: column !important;
+            }
+            .timeline-container > .timeline-entry .timeline-text {
+                text-align: left !important;
+                padding: 0 0 1.5rem 4rem !important;
+            }
+            .timeline-container > .timeline-entry .timeline-image-wrapper {
+                padding-left: 4rem !important;
+                padding-right: 0 !important;
+            }
+        }
+    </style>
 </head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar Navigation Shell -->
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md shadow-sm border-b border-outline-variant/20">
+<nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-display font-bold tracking-tight text-primary">Yuexin Zhang</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="intro.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="portfolio.html">Projects</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Involvements</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="hobby.html">Interests</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="resume.html">Resume</a>
+</div>
+<a href="contact.html">
+    <button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-medium hover:scale-95 transition-transform">
+            Contact
+        </button>
+</a>
+</nav>
+</header>
 
-<body data-theme="cupcake" class="flex flex-col min-h-screen">
-  <div class="navbar bg-accent">
-    <div class="navbar-start">
-        <div class="dropdown">
-          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h7" />
-            </svg>
-          </div>
-          <ul
-            tabindex="0"
-            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shado">
-            <li><a href="intro.html">Home</a></li>
-            <li><a href="portfolio.html">Project Portfolio</a></li>
-            <li><a href="activities.html" class="font-bold">On Campus Involvements</a></li>
-            <li><a href="hobby.html">Hobbies</a></li>
-            <li><a href="resume.html">Resume Related</a></li>
-            <li><a href="contact.html">Contact Me</a></li>
-          </ul>
-        </div>
-    </div>
-    <div class="flex-1">
-      <a class="text-xl font-bold text-primary-content absolute left-1/2 transform -translate-x-1/2">On Campus Involvements</a>
-    </div>
-  </div>
+<main class="pt-24 pb-20 overflow-x-hidden">
+<!-- Hero Header -->
+<header class="max-w-7xl mx-auto px-6 mb-12">
+<div class="relative overflow-hidden rounded-[2.5rem] bg-surface-container-highest p-12 md:p-24 text-center">
+<div class="relative z-10 max-w-3xl mx-auto">
+<span class="inline-block px-4 py-1 rounded-full bg-primary-container text-on-primary-container text-sm font-bold mb-8 uppercase tracking-widest">Impact &amp; Leadership</span>
+<h1 class="text-4xl md:text-7xl font-display font-extrabold text-on-surface mb-8 leading-tight">My Community <span class="text-primary italic underline decoration-primary/30 underline-offset-8">Chronology</span>.</h1>
+<p class="text-xl text-on-surface-variant font-body leading-relaxed">Tracing my steps as a student leader and mentor. Each milestone represents a commitment to building a stronger, more connected community.</p>
+</div>
+<div class="absolute -top-12 -right-12 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
+<div class="absolute -bottom-12 -left-12 w-96 h-96 bg-secondary/10 rounded-full blur-[100px]"></div>
+</div>
+</header>
+<!-- Category Filter Section -->
+<div class="max-w-7xl mx-auto px-6 mb-16 flex flex-wrap justify-center gap-4">
+<button class="filter-btn active px-6 py-2 rounded-full border-2 border-primary/20 font-bold text-primary hover:bg-primary/5 transition-all" data-category="all" onclick="filterTimeline('all')">All</button>
+<button class="filter-btn px-6 py-2 rounded-full border-2 border-primary/20 font-bold text-primary hover:bg-primary/5 transition-all" data-category="leadership" onclick="filterTimeline('leadership')">Leadership</button>
+<button class="filter-btn px-6 py-2 rounded-full border-2 border-primary/20 font-bold text-primary hover:bg-primary/5 transition-all" data-category="large-scale-events" onclick="filterTimeline('large-scale-events')">Large-Scale Events</button>
+<button class="filter-btn px-6 py-2 rounded-full border-2 border-primary/20 font-bold text-primary hover:bg-primary/5 transition-all" data-category="logistics-coordination" onclick="filterTimeline('logistics-coordination')">Logistics Coordination</button>
+</div>
+<!-- Enhanced Chronological Timeline Section -->
+<section class="max-w-7xl mx-auto px-6 relative timeline-line pb-20 timeline-container" id="timeline-container">
+<!-- Spring 2026 -->
+<div class="timeline-entry relative mb-32" data-categories='["leadership", "logistics-coordination"]'>
+<div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 timeline-content-wrapper">
+<div class="w-full md:w-1/2 timeline-text">
+<div class="inline-block px-6 py-2 rounded-2xl bg-primary text-on-primary font-display font-black text-2xl mb-6 shadow-lg">Spring 2026</div>
+<h3 class="text-3xl font-display font-bold text-on-surface mb-4">Formal Chair | Aggie Icers</h3>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-6">As Formal Chair for Aggie Icers and the Texas A&M Hockey community, I led the planning and execution of formal events for approximately 200 attendees. I coordinated all major logistics including venue arrangements, food ordering and distribution, budgeting, and event scheduling to ensure a seamless experience for all participants. I also led a team of 7 members responsible for event decoration, delegating tasks, managing timelines, and ensuring cohesive event design and execution.</p>
+<div class="flex md:justify-end gap-3 flex-wrap">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-primary uppercase tracking-wider">Leadership</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-primary uppercase tracking-wider">Logistics Coordination</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative group timeline-image-wrapper md:pl-12">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-outline-variant/30">
+<img alt="Leadership Presentation" class="w-full h-full object-cover" src="pics/hockey_formal.jpg"/>
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white border-4 border-primary timeline-marker z-20 top-8">
+<span class="material-symbols-outlined text-primary text-xl">sports_hockey</span>
+</div>
+</div>
+<!-- Fall 2025-->
+<div class="timeline-entry relative mb-32" data-categories='["leadership", "logistics-coordination"]'>
+<div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 timeline-content-wrapper">
+<div class="w-full md:w-1/2 timeline-text">
+<div class="inline-block px-6 py-2 rounded-2xl bg-secondary text-on-secondary font-display font-black text-2xl mb-6 shadow-lg">Fall 2025</div>
+<h3 class="text-3xl font-display font-bold text-on-surface mb-4">Recruitment Chair | Aggie Icers</h3>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-6">I led the recruitment process for the organization, managing over 200 applicants and successfully onboarding 30+ new members. I coordinated and organized recruitment events, including outreach, scheduling, and applicant engagement, to ensure a structured and accessible selection process.</p>
+<div class="flex md:justify-end gap-3 flex-wrap">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-secondary uppercase tracking-wider">Leadership</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-secondary uppercase tracking-wider">Logistics Coordination</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative group timeline-image-wrapper md:pl-12">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-outline-variant/30">
+<img alt="Mentor Meeting" class="w-full h-full object-cover" src="pics/hockey_group.jpg"/>
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white border-4 border-secondary timeline-marker z-20 top-8">
+<span class="material-symbols-outlined text-secondary text-xl">sports_hockey</span>
+</div>
+</div>
+<!-- front desk (2025) -->
+<div class="timeline-entry relative mb-32" data-categories='["logistics-coordination"]'>
+<div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 timeline-content-wrapper">
+<div class="w-full md:w-1/2 timeline-text">
+  <div class="inline-block px-6 py-2 rounded-2xl bg-secondary text-on-secondary font-display font-black text-2xl mb-6 shadow-lg">Fall 2025</div>
+<h3 class="text-3xl font-display font-bold text-on-surface mb-4">Front Desk Assistant | Texas A&M Career Center</h3>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-6">As a Front Desk Assistant at the Texas A&M Career Center, I serve as the first point of contact for students, employers, and campus visitors. I provide a welcoming and professional environment while assisting with appointment scheduling, career resources, and general inquiries. I support daily office operations by ensuring smooth communication and access to services for students navigating career development resources.</p>
+<div class="flex md:justify-end gap-3 flex-wrap">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-secondary uppercase tracking-wider">Logistics Coordination</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative group timeline-image-wrapper md:pl-12">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-outline-variant/30">
+<img alt="Mentor Meeting" class="w-full h-full object-cover" src="pics/careercenter_tamu.png"/>
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white border-4 border-secondary timeline-marker z-20 top-8">
+<span class="material-symbols-outlined text-secondary text-xl">support_agent</span>
+</div>
+</div>
+<!-- elephant walk (2025) -->
+<div class="timeline-entry relative mb-32" data-categories='["leadership", "large-scale-events", "logistics-coordination"]'>
+<div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 timeline-content-wrapper">
+<div class="w-full md:w-1/2 timeline-text">
+  <div class="inline-block px-6 py-2 rounded-2xl bg-secondary text-on-secondary font-display font-black text-2xl mb-6 shadow-lg">Fall 2025</div>
+<h3 class="text-3xl font-display font-bold text-on-surface mb-4">Logistics Director | Elephant Walk (Texas A&M Senior Tradition)</h3>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-6">As Logistics Director for Elephant Walk, I led end-to-end operational planning for one of Texas A&M’s largest senior traditions, coordinating the safe movement and experience of over 2,500 graduating students across campus. I managed event flow design, route logistics, volunteer coordination, and real-time execution to ensure a seamless procession honoring graduating seniors. Working closely with university staff, student leaders, and safety personnel, I helped translate a historic tradition into a highly organized, large-scale campus event while preserving its cultural significance.</p>
+<div class="flex md:justify-end gap-3 flex-wrap">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-secondary uppercase tracking-wider">Leadership</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-secondary uppercase tracking-wider">Large-Scale Events</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-secondary uppercase tracking-wider">Logistics Coordination</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative group timeline-image-wrapper md:pl-12">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-outline-variant/30">
+<img alt="Mentor Meeting" class="w-full h-full object-cover" src="pics/ewalk.JPG"/>
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white border-4 border-secondary timeline-marker z-20 top-8">
+<span class="material-symbols-outlined text-secondary text-xl">directions_walk</span>
+</div>
+</div>
 
-  <!-- Photo Display Section -->
-  <div class="carousel carousel-center" style="height: 40vh;">
-    <div class="carousel-item">
-      <img src="pics/4.jpg" alt="Pizza" class="object-cover w-full h-full" />
-    </div>
-    <div class="carousel-item">
-      <img
-        src="pics/13.JPG"
-        alt="Pizza" 
-        class="object-cover w-full h-full"/>
-    </div>
-    <div class="carousel-item">
-      <img
-        src="pics/1.JPG"
-        alt="Pizza" 
-        class="object-cover w-full h-full"/>
-    </div>
-    <div class="carousel-item">
-      <img
-        src="pics/2.JPG"
-        alt="Pizza" 
-        class="object-cover w-full h-full"/>
-    </div>
-    <div class="carousel-item">
-      <img src="pics/3.JPG" alt="Pizza" class="object-cover w-full h-full" />
-    </div>
-    <div class="carousel-item">
-      <img src="pics/5.jpg" alt="Pizza" class="object-cover w-full h-full" />
-    </div>
-    <div class="carousel-item">
-      <img
-        src="pics/6.jpg"
-        alt="Pizza" 
-        class="object-cover w-full h-full"/>
-    </div>
-    <div class="carousel-item">
-      <img
-        src="pics/7.jpg"
-        alt="Pizza" 
-        class="object-cover w-full h-full"/>
-    </div>
-    <div class="carousel-item">
-      <img
-        src="pics/8.jpg"
-        alt="Pizza" 
-        class="object-cover w-full h-full"/>
-    </div>
-    <div class="carousel-item">
-      <img
-        src="pics/9.jpg"
-        alt="Pizza" 
-        class="object-cover w-full h-full"/>
-    </div>
-    <div class="carousel-item">
-      <img
-        src="pics/10.jpg"
-        alt="Pizza" 
-        class="object-cover w-full h-full"/>
-    </div>
-    <div class="carousel-item">
-      <img
-        src="pics/11.jpg"
-        alt="Pizza" 
-        class="object-cover w-full h-full"/>
-    </div>
-    <div class="carousel-item">
-      <img
-        src="pics/12.jpg"
-        alt="Pizza" 
-        class="object-cover w-full h-full"/>
-    </div>
-  </div>
+<!-- summer fish camp -->
+<div class="timeline-entry relative mb-32" data-categories='["leadership"]'>
+<div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 timeline-content-wrapper">
+<div class="w-full md:w-1/2 timeline-text">
+<div class="inline-block px-6 py-2 rounded-2xl bg-tertiary text-on-tertiary font-display font-black text-2xl mb-6 shadow-lg">Summer 2025</div>
+<h3 class="text-3xl font-display font-bold text-on-surface mb-4">Counselor | Fish Camp (Session A, Lime Camp Byrd)</h3>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-6">I supported incoming freshmen in their transition to college life before the start of the academic year. I led small discussion groups, taught university traditions, and facilitated activities and skits designed to build connection, confidence, and community among students. Following the camp experience, I maintained ongoing mentorship relationships with freshmen throughout their first year, providing academic and personal support to help foster their success and sense of belonging.</p>
+<div class="flex md:justify-end gap-3 flex-wrap">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-tertiary uppercase tracking-wider">Leadership</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative group timeline-image-wrapper md:pl-12">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-outline-variant/30">
+<img alt="Robotics Lab" class="w-full h-full object-cover" src="pics/byrd.JPG"/>
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white border-4 border-tertiary timeline-marker z-20 top-8">
+<span class="material-symbols-outlined text-tertiary text-xl">groups</span>
+</div>
+</div>
 
-  <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-    <li>
-      <div class="timeline-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div class="timeline-start mb-10 md:text-end">
-        <time class="font-mono italic">2022 Fall</time>
-        <div class="text-lg font-black">Freshman Council - Member</div>
-        Being a part of a member development committee, I helped my counselors plan spring and fall retreats, 
-        coordinated themes, logistics, and activities to foster growth and connection within the organization.
-        I also reached out to on-campus organizations and outstanding people on campus to come and make speeches 
-        at the organization's weekly meeting, providing opportunities for members to enhance skills, learn to network, 
-        and eventually, achieve desired career goals.
-      </div>
-      <hr />
-    </li>
-    <li>
-      <hr />
-      <div class="timeline-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div class="timeline-start mb-10 md:text-end">
-        <div class="text-lg font-black">Class Council - Member</div>
-        As a member of the Class Council, I actively volunteered in all class traditions on campus and help promote 
-        events that bring our class together. I served as one of the representatives of our class working 
-        to ensure that everyone is heard and included in class traditions. In addition, I also collaborated with fellow 
-        council members to brainstorm new activities, address class concerns, and foster a strong sense of 
-        community and school spirit. 
-      </div>
-      <hr />
-    </li>
-    <li>
-      <div class="timeline-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div class="timeline-end md:mb-10">
-        <time class="font-mono italic">2022 Spring</time>
-        <div class="text-lg font-black">Fresshman Festival - Director of Logistics</div>
-        As director of logistics for a festival with over 800 attendances, I coordinated with on-campus organizations for performances 
-        during the event and off-campus vendors for other entertainment. To ensure the Freshman 
-        Festival runs smoothly and successfully, I managed communications between different organizations,
-        oversaw event timelines, and handled logistical details to ensure everything is well-organized. In 
-        addition, I also collaborated with other people on the team to avoid potential issues. 
-      </div>
-      <hr />
-    </li>
-    <li>
-      <div class="timeline-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div class="timeline-start mb-10 md:text-end">
-        <time class="font-mono italic">2023 Summer</time>
-        <div class="text-lg font-black">Freshman Camp (Session H Yellow Camp Baumann) - Counselor</div>
-        As a Fish Camp counselor at Texas A&M University, I supported and guided incoming freshmen before 
-        the first day of school to help smooth their transition into college life. I led small discussion
-        groups, taught university traditions, and engaged students through activities and skits designed to
-        build connections and confidence. After camp, I maintained relationships with freshmen throughout their
-        first year, serving as a mentor and support system to ensure their success and sense of belonging. 
-      </div>
-      <hr />
-    </li>
-    <li>
-      <div class="timeline-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div class="timeline-end md:mb-10">
-        <time class="font-mono italic">2023 Spring</time>
-        <div class="text-lg font-black">Big Event - Volunteer</div>
-        As a volunteer, I participated in service projects to show appreciation for the local
-        community. I assisted with tasks such as yard work, painting, and cleaning, contributing to
-        improving the area. 
-      </div>
-      <hr />
-    </li>
-    <li>
-      <div class="timeline-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div class="timeline-start mb-10 md:text-end">
-        <time class="font-mono italic">2023 Fall</time>
-        <div class="text-lg font-black">Freshman Council - Counselor</div>
-        As a social counselor, I organized social events for over 70 members within the organization,
-        creating opportunities for connections and engagements. I coordinated event logistics,
-        plan activities, and ensured a welcoming environment that fostered camaraderie add a sense
-        of community among members.
-      </div>
-      <hr />
-    </li>
-    <li>
-      <hr />
-      <div class="timeline-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div class="timeline-start mb-10 md:text-end">
-        <div class="text-lg font-black">Replant - Volunteer</div>
-        Being a volunteer at Aggie Replant, a student-run environmental service organization at 
-        Texas A&M University, I helped plant trees to improve the community and promote sustainability. 
-      </div>
-      <hr />
-    </li>
-    <li>
-      <div class="timeline-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div class="timeline-end md:mb-10">
-        <time class="font-mono italic">2024 Spring</time>
-        <div class="text-lg font-black">IEEE - Member</div>
-        Being a member of IEEE, I engage with a global community of professionals and students
-        passionate about advancing technology. I actively participated in events, workshops, and networking
-        opportunities to develop technical skills.
-      </div>
-      <hr />
-    </li>
-    <li>
-      <div class="timeline-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div class="timeline-end md:mb-10">
-        <div class="text-lg font-black">Big Event - Volunteer</div>
-        As a volunteer, I participated in service projects to show appreciation for the local
-        community. I assisted with tasks such as yard work, painting, and cleaning, contributing to
-        improving the area. 
-      </div>
-      <hr />
-    </li>
-    <li>
-      <div class="timeline-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div class="timeline-start mb-10 md:text-end">
-        <time class="font-mono italic">2024 Summer</time>
-        <div class="text-lg font-black">Freshman Camp (Session G Purple Camp Shurtleff) - Counselor</div>
-        As a Fish Camp counselor at Texas A&M University, I supported and guided incoming freshmen before 
-        the first day of school to help smooth their transition into college life. I led small discussion
-        groups, taught university traditions, and engaged students through activities and skits designed to
-        build connections and confidence. After camp, I maintained relationships with freshmen throughout their
-        first year, serving as a mentor and support system to ensure their success and sense of belonging. 
-      </div>
-      <hr />
-    </li>
-    <li>
-      <hr />
-      <div class="timeline-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div class="timeline-end md:mb-10">
-        <time class="font-mono italic">2024 Fall</time>
-        <div class="text-lg font-black">T.U.R.T.L.E. Robotics - Member</div>
-        As a member of a robotics team, I spent the school year contributing to the mechanical design and construction of a project focused on balancing objects on a device. 
-        I collaborated closely with teammates to brainstorm, prototype, and refine solutions, developing technical skills and teamwork throughout the process.
-      </div>
-      <hr />
-    </li>
-    <li>
-      <hr />
-      <div class="timeline-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div class="timeline-end md:mb-10">
-        <div class="text-lg font-black">Aggie Icers - Member</div>
-        As a member of the Aggie Icers, a spirit group supporting Texas A&M ice hockey, 
-        I helped foster team spirit and provided support to the players. I assisted with game-day preparations, 
-        cheered on the team during matches, and ensured the players feel encouraged and cared for throughout the season.
-      </div>
-      <hr />
-    </li>
-  </ul>
+<!-- Fall 2024 -->
+<div class="timeline-entry relative mb-32" data-categories='["leadership"]'>
+<div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 timeline-content-wrapper">
+<div class="w-full md:w-1/2 timeline-text">
+<div class="inline-block px-6 py-2 rounded-2xl bg-primary text-on-primary font-display font-black text-2xl mb-6 shadow-lg">Fall 2024</div>
+<h3 class="text-3xl font-display font-bold text-on-surface mb-4">Team Lead | T.U.R.T.L.E. Robotics</h3>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-6">As Team Lead for a spherical balancing robot project at Texas A&M University, I organized weekly team meetings and coordinated parallel work across mechanical, electrical, and software subteams to ensure consistent progress and integration. I led system-level design of a BB-8–inspired balancing robot, overseeing the shell structure, internal drive mechanism, and sensor integration to support stable motion and control. I worked closely with teammates to align design decisions, resolve integration challenges, and maintain project timelines throughout development.</p>
+<div class="flex md:justify-end gap-3 flex-wrap">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-primary uppercase tracking-wider">Leadership</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative group timeline-image-wrapper md:pl-12">
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white border-4 border-primary timeline-marker z-20 top-8">
+<span class="material-symbols-outlined text-primary text-xl">smart_toy</span>
+</div>
+</div>
 
-  <!-- Footer Section -->
-  <footer class="footer footer-center bg-accent text-primary-content p-10 mt-auto">
-    <aside>
-        <img
-            src="pics/YZ.png" 
-            alt="My custom image"
-            width="50"
-            height="50"
-            class="inline-block"
-        />
-        <p class="font-bold">
-            Created by Yuexin Zhang
-        </p>
-    </aside>        
-    <nav>
-      <!-- Icon Section -->
-        <div class="grid grid-flow-col gap-4">
-          <a href="#" onclick="showContactInfo('email')">
-              <img class="mask mask-squircle" width="40" height="40" src="pics/email.png" alt="Email">
-          </a>
-          <a href="#" onclick="showContactInfo('phone')">
-              <img class="mask mask-squircle" width="40" height="40" src="pics/phone.png" alt="Phone">
-          </a>
-          <a href="#" onclick="showContactInfo('linkedin')">
-              <img class="mask mask-squircle" width="40" height="40" src="pics/linkedin.png" alt="LinkedIn">
-          </a>
-      </div>
+<!-- icers member -->
+<div class="timeline-entry relative mb-32" data-categories='[]'>
+<div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 timeline-content-wrapper">
+<div class="w-full md:w-1/2 timeline-text">
+<div class="inline-block px-6 py-2 rounded-2xl bg-primary text-on-primary font-display font-black text-2xl mb-6 shadow-lg">Fall 2024</div>
+<h3 class="text-3xl font-display font-bold text-on-surface mb-4">Member | Aggie Icers</h3>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-6">Supported Texas A&M hockey by helping foster team spirit and assisting with game-day activities. I contributed to creating a positive and encouraging environment for players through attendance at games, support efforts, and team engagement throughout the season.</p>
+<div class="flex md:justify-end gap-3 flex-wrap">
+</div>
+</div>
+<div class="w-full md:w-1/2 relative group timeline-image-wrapper md:pl-12">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-outline-variant/30">
+<img alt="Robotics Lab" class="w-full h-full object-cover" src="pics/8.JPG"/>
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white border-4 border-primary timeline-marker z-20 top-8">
+<span class="material-symbols-outlined text-primary text-xl">sports_hockey</span>
+</div>
+</div>
 
-      <!-- Contact Information Section -->
-      <div id="email-info" class="contact-info">
-          <p>Email: yuexin.z.jobs@gmail.com</p>
-      </div>
-      <div id="phone-info" class="contact-info">
-          <p>Phone: +1 (806)392-4012</p>
-      </div>
-      <div id="linkedin-info" class="contact-info">
-          <p>LinkedIn: <a href="https://www.linkedin.com/in/yuexin-zhang/" target="_blank">LinkedIn Profile</a></p>
-      </div>
+<!-- fall 2024 -->
+<div class="timeline-entry relative mb-32" data-categories='["Leadership"]'>
+<div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 timeline-content-wrapper">
+<div class="w-full md:w-1/2 timeline-text">
+<div class="inline-block px-6 py-2 rounded-2xl bg-secondary text-on-secondary font-display font-black text-2xl mb-6 shadow-lg">Summer 2024</div>
+<h3 class="text-3xl font-display font-bold text-on-surface mb-4">Counselor | Fish Camp (Session G, Purple Camp Shurtleff)</h3>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-6">I supported incoming freshmen in their transition to college life before the start of the academic year. I led small discussion groups, taught university traditions, and facilitated activities and skits designed to build connection, confidence, and community among students. Following the camp experience, I maintained ongoing mentorship relationships with freshmen throughout their first year, providing academic and personal support to help foster their success and sense of belonging.</p>
+<div class="flex md:justify-end gap-3 flex-wrap">
+  <span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-primary">Leadership</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative group timeline-image-wrapper md:pl-12">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-outline-variant/30">
+<img alt="Hackathon" class="w-full h-full object-cover" src="pics/6.jpg"/>
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white border-4 border-secondary timeline-marker z-20 top-8">
+<span class="material-symbols-outlined text-secondary text-xl">groups</span>
+</div>
+</div>
 
-      <script>
-          function showContactInfo(type) {
-              const allContactInfo = document.querySelectorAll('.contact-info');
-              allContactInfo.forEach(info => {
-                  info.style.display = 'none';
-              });
+<!-- summer 2024 -->
+<div class="timeline-entry relative mb-32" data-categories='[]'>
+<div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 timeline-content-wrapper">
+<div class="w-full md:w-1/2 timeline-text">
+<div class="inline-block px-6 py-2 rounded-2xl bg-tertiary text-on-tertiary font-display font-black text-2xl mb-6 shadow-lg">Spring 2024</div>
+<h3 class="text-3xl font-display font-bold text-on-surface mb-4">Member | IEEE</h3>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-6">I engaged with a global community of students and professionals focused on advancing technology and engineering innovation. I participated in technical workshops, events, and networking opportunities to strengthen my foundational engineering knowledge and develop relevant technical and professional skills.</p>
+<div class="flex md:justify-end gap-3 flex-wrap">
+</div>
+</div>
+<div class="w-full md:w-1/2 relative group timeline-image-wrapper md:pl-12">
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white border-4 border-tertiary timeline-marker z-20 top-8">
+<span class="material-symbols-outlined text-tertiary text-xl">precision_manufacturing</span>
+</div>
+</div>
 
-              const contactInfo = document.getElementById(`${type}-info`);
-              if (contactInfo) {
-                  contactInfo.style.display = 'block';
-              }
-          }
-      </script>
-    </nav>
-  </footer>
-</body>
-</html>
+
+<!-- 7. Charity Tech Drive Organizer (2021) -->
+<div class="timeline-entry relative mb-32" data-categories='["leadership"]'>
+<div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 timeline-content-wrapper">
+<div class="w-full md:w-1/2 timeline-text">
+<div class="inline-block px-6 py-2 rounded-2xl bg-primary text-on-primary font-display font-black text-2xl mb-6 shadow-lg">Fall 2023</div>
+<h3 class="text-3xl font-display font-bold text-on-surface mb-4">Social Counselor | Freshman Council</h3>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-6">Organized and facilitated social events for over 70 members, creating opportunities for engagement, connection, and community building within the organization. I coordinated event logistics, planned activities, and helped ensure a welcoming and inclusive environment that fostered camaraderie and strengthened member relationships.</p>
+<div class="flex md:justify-end gap-3 flex-wrap">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-primary uppercase tracking-wider">Leadership</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative group timeline-image-wrapper md:pl-12">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-outline-variant/30">
+<img alt="Charity Drive" class="w-full h-full object-cover" src="pics/13.JPG"/>
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white border-4 border-primary timeline-marker z-20 top-8">
+<span class="material-symbols-outlined text-primary text-xl">favorite</span>
+</div>
+</div>
+<!-- 8. Code Camp Mentor (2020) -->
+<div class="timeline-entry relative mb-32" data-categories='["leadership"]'>
+<div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 timeline-content-wrapper">
+<div class="w-full md:w-1/2 timeline-text">
+<div class="inline-block px-6 py-2 rounded-2xl bg-secondary text-on-secondary font-display font-black text-2xl mb-6 shadow-lg">Summer 2023</div>
+<h3 class="text-3xl font-display font-bold text-on-surface mb-4">Counselor | Fish Camp (Session H, Yellow Camp Baumann)</h3>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-6">Supported incoming freshmen in their transition to college life prior to the start of the academic year. I worked with a camp cohort of over 150 students and led small discussion groups of 10+ students, facilitating conversations, teaching university traditions, and guiding activities designed to build connection and confidence. Following the camp experience, I maintained ongoing mentorship relationships throughout their first year, serving as a support system to promote student success and a sense of belonging.</p>
+<div class="flex md:justify-end gap-3 flex-wrap">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-secondary uppercase tracking-wider">Leadership</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative group timeline-image-wrapper md:pl-12">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-outline-variant/30">
+<img alt="Teaching" class="w-full h-full object-cover" src="pics/12.jpg"/>
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white border-4 border-secondary timeline-marker z-20 top-8">
+<span class="material-symbols-outlined text-secondary text-xl">group</span>
+</div>
+</div>
+<!-- 9. Freshmen Orientation Lead (2020) -->
+<div class="timeline-entry relative mb-32" data-categories='["large-scale-events", "leadership"]'>
+<div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 timeline-content-wrapper">
+<div class="w-full md:w-1/2 timeline-text">
+<div class="inline-block px-6 py-2 rounded-2xl bg-tertiary text-on-tertiary font-display font-black text-2xl mb-6 shadow-lg">Spring 2022</div>
+<h3 class="text-3xl font-display font-bold text-on-surface mb-4">Director of Logistics | Freshman Festival</h3>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-6">Planned the first-ever virtual orientation week for 400 incoming engineering students.</p>
+<div class="flex md:justify-end gap-3 flex-wrap">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-tertiary uppercase tracking-wider">Large-Scale Events</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-tertiary uppercase tracking-wider">Leadership</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative group timeline-image-wrapper md:pl-12">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-outline-variant/30">
+<img alt="Orientation" class="w-full h-full object-cover" src="pics/9.jpg"/>
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white border-4 border-tertiary timeline-marker z-20 top-8">
+<span class="material-symbols-outlined text-tertiary text-xl">favorite</span>
+</div>
+</div>
+
+<!-- fish co member -->
+<div class="timeline-entry relative mb-16" data-categories='[]'>
+<div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 timeline-content-wrapper">
+<div class="w-full md:w-1/2 timeline-text">
+<div class="inline-block px-6 py-2 rounded-2xl bg-primary text-on-primary font-display font-black text-2xl mb-6 shadow-lg">Fall 2022</div>
+<h3 class="text-3xl font-display font-bold text-on-surface mb-4">Member | Freshman Council</h3>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-6">Contributed to the member development committee by helping plan fall and spring retreats, coordinating themes, logistics, and activities designed to strengthen community and engagement within the organization. I also assisted in outreach efforts by inviting campus organizations and speakers to weekly meetings, providing members with opportunities to develop professional skills, expand their networks, and explore career pathways.</p>
+<div class="flex md:justify-end gap-3 flex-wrap">
+</div>
+</div>
+<div class="w-full md:w-1/2 relative group timeline-image-wrapper md:pl-12">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-outline-variant/30">
+<img alt="Tutoring" class="w-full h-full object-cover" src="pics/7.jpg"/>
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white border-4 border-primary timeline-marker z-20 top-8">
+<span class="material-symbols-outlined text-primary text-xl">campaign</span>
+</div>
+</div>
+
+<!-- class co member -->
+<div class="timeline-entry relative mb-16" data-categories='[]'>
+<div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 timeline-content-wrapper">
+<div class="w-full md:w-1/2 timeline-text">
+<div class="inline-block px-6 py-2 rounded-2xl bg-primary text-on-primary font-display font-black text-2xl mb-6 shadow-lg">Fall 2022</div>
+<h3 class="text-3xl font-display font-bold text-on-surface mb-4">Member | Class Council</h3>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-6">Actively participated in planning and supporting class traditions and campus-wide events that foster school spirit and student connection. I represented my class in discussions to ensure student voices were heard, while collaborating with fellow council members to design new activities, address concerns, and strengthen community engagement across campus.</p>
+<div class="flex md:justify-end gap-3 flex-wrap">
+</div>
+</div>
+<div class="w-full md:w-1/2 relative group timeline-image-wrapper md:pl-12">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-outline-variant/30">
+<img alt="Tutoring" class="w-full h-full object-cover" src="pics/cc_2022.JPG"/>
+</div>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white border-4 border-primary timeline-marker z-20 top-8">
+<span class="material-symbols-outlined text-primary text-xl">campaign</span>
+</div>
+</div>
+
+</section>
+
+<!-- Bento Grid: Snapshot of Impact -->
+<section class="max-w-7xl mx-auto px-6 py-24 bg-surface-container-low rounded-[3rem] my-20">
+<h2 class="text-4xl font-display font-bold text-center mb-16">Leadership Philosophy <span class="text-primary italic">&amp;</span> Snapshot</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-auto md:grid-rows-2 gap-6 h-auto md:h-[650px]">
+<!-- Large Card -->
+<div class="md:col-span-2 md:row-span-2 bg-primary rounded-[2.5rem] p-10 text-on-primary flex flex-col justify-end relative overflow-hidden group shadow-2xl shadow-primary/20">
+<span class="material-symbols-outlined text-9xl opacity-10 absolute -top-4 -right-4 rotate-12 transition-transform group-hover:scale-110 duration-700" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<h4 class="text-4xl font-display font-bold mb-6">The Mentorship Loop</h4>
+<p class="text-xl opacity-90 leading-relaxed font-body">"Leadership is not defined by title, but by how many people you elevate with you. I focus on building systems where upperclassmen actively mentor freshmen, creating a self-sustaining cycle of growth across technical and community organizations."</p>
+</div>
+<!-- Stats Card -->
+<div class="bg-white rounded-[2rem] p-8 flex flex-col justify-center items-center text-center shadow-lg border border-outline-variant/30">
+<span class="text-6xl font-display font-black text-primary mb-3">2</span>
+<p class="font-bold text-on-surface-variant uppercase tracking-widest text-sm">Large-Scale Events Organized</p>
+</div>
+<!-- Image Card -->
+<div class="bg-secondary-container rounded-[2rem] overflow-hidden relative group shadow-lg">
+<img alt="Team Success" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeYZARt6AdXNZ7pwofDQPgXb8Zmv30hpwPW57yzCVvD7UM52JyG1IaoaVLAyqTOM5sTk0xUF5IyVe5hmFAEihhtvgxRwPDLjlB4eoWNd4n7KM7jErx3c2AKb1mYsugl9WXDhrW1QzxJT6PZUecQ1vJ-tgQJfmeGC19Ea5OhDG5kmjGdf0WFd3sc0hMrm1isqvUFGWA7oUr95mTKDBjlJkQJEmSAGK7zmhj5t3ZQW1UrTTM4KAsUj3RqE35a4STFdHwe5QqGut_WZEX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+<p class="text-white font-bold">Collaborative Success 2023</p>
+</div>
+</div>
+<!-- Stats Card -->
+<div class="bg-white rounded-[2rem] p-8 flex flex-col justify-center items-center text-center shadow-lg border border-outline-variant/30">
+<span class="text-6xl font-display font-black text-secondary mb-3">300+</span>
+<p class="font-bold text-on-surface-variant uppercase tracking-widest text-sm">Members Engaged</p>
+</div>
+<!-- Stats Card -->
+<div class="bg-white rounded-[2rem] p-8 flex flex-col justify-center items-center text-center shadow-lg border border-outline-variant/30">
+<span class="text-6xl font-display font-black text-tertiary mb-3">8</span>
+<p class="font-bold text-on-surface-variant uppercase tracking-widest text-sm">Leadership Positions</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Subtle background glow -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-primary/5 blur-3xl -z-10"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 px-6 py-12 max-w-7xl mx-auto">
+<div>
+<div class="font-headline font-bold text-on-surface mb-2">Yuexin Zhang</div>
+<p class="font-body text-sm text-on-surface-variant">Computer Engineering · Distributed Systems · Intelligent Infrastructure</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="https://www.linkedin.com/in/yuexin-zhang?utm_source=share_via&utm_content=profile&utm_medium=member_ios">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="https://github.com/yuexin-z11">GitHub</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="mailto:yuexin.z.jobs@gmail.com">Email</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="https://www.instagram.com/yuexinzhang1314?igsh=bXdxNTVicWd2bDM4&utm_source=qr">Instagram</a>
+</div>
+</div>
+</footer>
+<script>
+    function filterTimeline(category) {
+        const entries = document.querySelectorAll('.timeline-entry');
+        const buttons = document.querySelectorAll('.filter-btn');
+        const container = document.getElementById('timeline-container');
+        
+        // Update active button state
+        buttons.forEach(btn => {
+            if (btn.getAttribute('data-category') === category) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        // Toggle visibility
+        entries.forEach(entry => {
+            const entryCategories = JSON.parse(entry.getAttribute('data-categories') || "[]");
+            if (category === 'all' || entryCategories.includes(category)) {
+                entry.classList.remove('hidden-entry');
+            } else {
+                entry.classList.add('hidden-entry');
+            }
+        });
+
+        // Trigger a slight delay to allow display:none to take effect before observer updates
+        setTimeout(() => {
+            window.dispatchEvent(new Event('resize')); // Recalculate observer positions if necessary
+        }, 50);
+    }
+
+    // Intersection Observer for fade-in
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-12');
+            }
+        });
+    }, observerOptions);
+
+    // Initial setup for observation
+    document.querySelectorAll('.timeline-entry, header, section > div.relative, section').forEach(el => {
+        if(!el.classList.contains('timeline-line')){
+            el.classList.add('transition-all', 'duration-700', 'ease-out', 'opacity-0', 'translate-y-12');
+            observer.observe(el);
+        }
+    });
+</script>
+</body></html>

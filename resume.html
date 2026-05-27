@@ -1,221 +1,415 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
-  <style>
-    .contact-info {
-        display: none;
-        background-color: #f1f1f1;
-        padding: 10px;
-        border-radius: 5px;
-        margin-top: 10px;
-    }
-  </style>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yuexin Zhang | Professional Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#fff7f8",
+                    "surface-container-low": "#ffefff",
+                    "on-error-container": "#68001f",
+                    "inverse-surface": "#190622",
+                    "on-background": "#492159",
+                    "on-primary-fixed": "#530036",
+                    "primary-fixed": "#ffa6d1",
+                    "tertiary-fixed-dim": "#48b9f0",
+                    "on-secondary": "#fff6ff",
+                    "error-dim": "#770326",
+                    "inverse-primary": "#fa56b6",
+                    "surface-container-highest": "#f8d8ff",
+                    "surface-container-high": "#fae0ff",
+                    "on-tertiary": "#f4f9ff",
+                    "tertiary": "#00668c",
+                    "error-container": "#f76a80",
+                    "surface": "#fff7fb",
+                    "on-surface-variant": "#794f89",
+                    "tertiary-dim": "#00597b",
+                    "on-surface": "#492159",
+                    "on-tertiary-container": "#003d56",
+                    "surface-tint": "#b3127b",
+                    "secondary-dim": "#683f95",
+                    "inverse-on-surface": "#b093b7",
+                    "secondary-fixed": "#efdbff",
+                    "outline": "#976aa7",
+                    "background": "#fff7fb",
+                    "surface-container": "#fde7ff",
+                    "primary-container": "#ffa6d1",
+                    "on-secondary-container": "#673d94",
+                    "primary-fixed-dim": "#ff8fc8",
+                    "outline-variant": "#d1a1e2",
+                    "secondary-fixed-dim": "#e5caff",
+                    "on-secondary-fixed-variant": "#71479f",
+                    "surface-variant": "#f8d8ff",
+                    "primary-dim": "#a0006e",
+                    "on-error": "#fff7f7",
+                    "surface-dim": "#f4cdff",
+                    "on-primary-container": "#780051",
+                    "surface-bright": "#fff7fb",
+                    "tertiary-container": "#59c6ff",
+                    "on-tertiary-fixed-variant": "#004762",
+                    "on-primary-fixed-variant": "#88005c",
+                    "primary": "#b3127b",
+                    "error": "#ac3149",
+                    "on-tertiary-fixed": "#002637",
+                    "tertiary-fixed": "#59c6ff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#efdbff",
+                    "secondary": "#754ba3",
+                    "on-secondary-fixed": "#532980"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif Georgian"],
+                    "display": ["Noto Serif Georgian"],
+                    "body": ["Noto Serif Georgian"],
+                    "label": ["Noto Serif Georgian"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Noto Serif Georgian', serif;
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 2rem;
+            bottom: 0;
+            width: 2px;
+            background: repeating-linear-gradient(to bottom, #b3127b, #b3127b 4px, transparent 4px, transparent 8px);
+        }
+        .glass-card {
+            background: rgba(255, 247, 251, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(179, 18, 123, 0.1);
+        }
+    </style>
 </head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md shadow-sm border-b border-outline-variant/20">
+<nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-display font-bold tracking-tight text-primary">Yuexin Zhang</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="intro.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="portfolio.html">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="activities.html">Involvements</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="hobby.html">Interests</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Resume</a>
+</div>
+<a href="contact.html">
+    <button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-medium hover:scale-95 transition-transform">
+            Contact
+        </button>
+</a>
+</nav>
+</header>
+<main class="pt-28 pb-20 px-6 max-w-7xl mx-auto">
+<!-- Hero Title Section -->
+<section class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<h1 class="text-5xl md:text-7xl font-display font-black text-on-surface leading-tight mb-4">
+                    Professional <span class="text-primary">Credentials.</span>
+</h1>
+<p class="text-xl text-on-surface-variant font-medium max-w-lg">
+                    A comprehensive overview of engineering excellence, technical specialized expertise, and academic rigor in computer engineering.
+                </p>
+</div>
+<div>
+<a href="pics/Yuexin_Zhang_TexasA&MUniversity.pdf"
+   download
+   class="group relative inline-flex items-center gap-3 bg-secondary text-on-primary px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-primary-container/50 transition-all duration-300 overflow-hidden">
 
-<body data-theme="cupcake" class="flex flex-col min-h-screen">
-    <div class="navbar bg-accent">
-        <div class="navbar-start">
-            <div class="dropdown">
-              <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h7" />
-                </svg>
-              </div>
-              <ul
-                tabindex="0"
-                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shado">
-                <li><a href="intro.html">Home</a></li>
-                <li><a href="portfolio.html">Project Portfolio</a></li>
-                <li><a href="activities.html">On Campus Involvements</a></li>
-                <li><a href="hobby.html">Hobbies</a></li>
-                <li><a href="resume.html" class="font-bold">Resume Related</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-              </ul>
-            </div>
+    <span class="relative z-10 flex items-center gap-2">
+        Download Full CV (PDF)
+        <span class="material-symbols-outlined"
+              style="font-variation-settings:'FILL' 1;">
+            download
+        </span>
+    </span>
+
+    <div class="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+
+</a>
+</div>
+</section>
+<!-- Main Content Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Sidebar: Technical Mastery -->
+<aside class="lg:col-span-4 space-y-8">
+<div class="glass-card p-8 rounded-3xl sticky top-28">
+<h2 class="text-2xl font-display font-bold text-primary mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+                        Technical Mastery
+                    </h2>
+<!-- Skill Categories -->
+<div class="space-y-8">
+<div>
+<h3 class="text-sm uppercase tracking-widest font-bold text-outline mb-4">Programming & Data Technologies</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-sm font-bold">Python</span>
+<span class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-sm font-bold">C++</span>
+<span class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-sm font-bold">Java</span>
+<span class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-sm font-bold">JavaScript</span>
+<span class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-sm font-bold">C</span>
+<span class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-sm font-bold">R</span>
+<span class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-sm font-bold">SQL</span>
+<span class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-sm font-bold">Data Analysis (pandas, NumPy)</span>
+<span class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-sm font-bold">Shell Scripting</span>
+</div>
+</div>
+<div>
+<h3 class="text-sm uppercase tracking-widest font-bold text-outline mb-4">Systems, Hardware & Embedded Computing</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold">Vivado</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold">Verilog</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold">Vitis</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold">PetaLinux</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold">Embedded Linux</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold">Raspberry Pi</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold">Zynq-7000 SoC</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold">FPGA Debugging</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold">Arduino</span>
+</div>
+</div>
+<div>
+<h3 class="text-sm uppercase tracking-widest font-bold text-outline mb-4">Cloud, Web & Development Tools</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-sm font-bold">AWS</span>
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-sm font-bold">Azure</span>
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-sm font-bold">HTML</span>
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-sm font-bold">CSS</span>
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-sm font-bold">Bootstrap</span>
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-sm font-bold">Rest API</span>
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-sm font-bold">Git/GitHub</span>
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-sm font-bold">Figma</span>
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-sm font-bold">Microsoft Office</span>
+</div>
+</div>
+</div>
+<!-- Visual Accents -->
+<div class="mt-8 overflow-hidden rounded-2xl aspect-square relative group">
+<img alt="Technical Illustration" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="pics/grad_black.JPG"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+</div>
+</div>
+</aside>
+<!-- Main Body: Timeline & Education -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Professional Engineering Timeline -->
+<section>
+<h2 class="text-3xl font-display font-bold text-on-surface mb-10 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-4xl">engineering</span>
+                        Professional Engineering
+                    </h2>
+<div class="relative pl-10 timeline-line space-y-12">
+<!-- Experience Item 1 -->
+<div class="relative">
+<div class="absolute -left-10 top-0 w-6 h-6 rounded-full bg-primary border-4 border-surface z-10"></div>
+<div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+<h3 class="text-2xl font-bold text-on-surface">Technology Marketing Intern</h3>
+<span class="text-primary font-bold bg-primary-container px-3 py-1 rounded text-sm">06/2026 - Present</span>
+</div>
+<p class="text-lg font-bold text-secondary mb-4">Guangzhou CanSemi Technology Inc.</p>
+<ul class="space-y-3 text-on-surface-variant list-disc pl-5">
+<li>Collaborated with engineering and marketing teams to communicate semiconductor technologies, develop technical collateral, and support product promotion strategies.</li>
+</ul>
+</div>
+<!-- Experience Item 2 -->
+<div class="relative">
+<div class="absolute -left-10 top-0 w-6 h-6 rounded-full bg-primary border-4 border-surface z-10"></div>
+<div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+<h3 class="text-2xl font-bold text-on-surface">Software/Automation Intern</h3>
+<span class="text-primary font-bold bg-primary-container px-3 py-1 rounded text-sm">05/2025 - 08/2025</span>
+</div>
+<p class="text-lg font-bold text-secondary mb-4">Hangzhou Tongshang Optoelectronics Co., Ltd.</p>
+<ul class="space-y-3 text-on-surface-variant list-disc pl-5">
+<li>Designed and implemented Python-based control software for synchronizing three heterogeneous devices, enabling real-time brightness adjustment, monitoring, and fault alerts.</li>
+<li>Processed and segmented 20GB of raw photometric data, implementing automated labeling to generate structured training samples.</li>
+<li>Optimized data preprocessing workflow, improving subsequent model training efficiency by 40%.</li>
+</ul>
+</div>
+<!-- Experience Item 3 -->
+<div class="relative">
+<div class="absolute -left-10 top-0 w-6 h-6 rounded-full bg-secondary border-4 border-surface z-10"></div>
+<div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+<h3 class="text-2xl font-bold text-on-surface">Software Engineering Intern</h3>
+<span class="text-secondary font-bold bg-secondary-container px-3 py-1 rounded text-sm">06/2024 - 08/2024</span>
+</div>
+<p class="text-lg font-bold text-secondary mb-4">Supcon Technology</p>
+<ul class="space-y-3 text-on-surface-variant list-disc pl-5">
+<li>Collaborated with the team to develop an RAG framework, integrating FAISS vector retrieval with GPT models to enhance the accuracy and real-time performance of the QA system.</li>
+<li>Built an enterprise-grade vector database using Milvus, indexing unstructured data; designed ETL pipelines to clean and vectorize multi-format documents, enabling efficient semantic search.</li>
+<li>Developed Python scripts for batch processing raw data, including text cleaning, chunking, and vectorization to improve training data quality.</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Academic Background -->
+<section class="pt-8">
+<h2 class="text-3xl font-display font-bold text-on-surface mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-4xl">school</span>
+                        Academic Background
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-8 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all">
+<span class="inline-block px-3 py-1 bg-on-primary-fixed-variant text-on-primary rounded-full text-xs font-bold mb-4 uppercase tracking-widest">Master of Science</span>
+<h3 class="text-xl font-bold text-on-surface mb-2">Electrical and Computer Engineering</h3>
+<p class="text-secondary font-medium mb-4">Georgia Institute of Technology</p>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                                2026
+                            </div>
+<p class="mt-4 text-sm text-on-surface-variant">Specialization in Computer Systems & Software.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all">
+<span class="inline-block px-3 py-1 bg-on-tertiary-fixed-variant text-on-tertiary rounded-full text-xs font-bold mb-4 uppercase tracking-widest">Bachelor of Engineering</span>
+<h3 class="text-xl font-bold text-on-surface mb-2">Computer Engineering</h3>
+<p class="text-secondary font-medium mb-4">Texas A&M University</p>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                                2022
+                            </div>
+<p class="mt-4 text-sm text-on-surface-variant">Graduated with Latin Honors and recognition on the Dean’s Honor Roll.</p>
+</div>
+<div class="bg-surface-container-low p-10 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all md:col-span-2">
+
+    <h3 class="text-xl font-bold text-on-surface mb-8 flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary">list_alt</span>
+        Relevant Coursework
+    </h3>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+        <div class="flex items-center gap-2 text-sm text-on-surface-variant font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Computer Systems Design
         </div>
-        <div class="flex-1">
-          <a class="text-xl font-bold text-primary-content absolute left-1/2 transform -translate-x-1/2">Resume Related</a>
+
+        <div class="flex items-center gap-2 text-sm text-on-surface-variant font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Computer Architecture & Design
         </div>
+
+        <div class="flex items-center gap-2 text-sm text-on-surface-variant font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Intro to Computer Systems
+        </div>
+
+        <div class="flex items-center gap-2 text-sm text-on-surface-variant font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Cloud Computing
+        </div>
+
+        <div class="flex items-center gap-2 text-sm text-on-surface-variant font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Artificial Intelligence
+        </div>
+
+        <div class="flex items-center gap-2 text-sm text-on-surface-variant font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Database Systems
+        </div>
+
+        <div class="flex items-center gap-2 text-sm text-on-surface-variant font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Data Structures & Algorithms
+        </div>
+
+        <div class="flex items-center gap-2 text-sm text-on-surface-variant font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Design & Analysis of Algorithms
+        </div>
+
+        <div class="flex items-center gap-2 text-sm text-on-surface-variant font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Software Engineering
+        </div>
+
+        <div class="flex items-center gap-2 text-sm text-on-surface-variant font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Signals & Systems
+        </div>
+
+        <div class="flex items-center gap-2 text-sm text-on-surface-variant font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Microprocessor System Design
+        </div>
+
+        <div class="flex items-center gap-2 text-sm text-on-surface-variant font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Digital Integrated Circuit Design
+        </div>
+
+        <div class="flex items-center gap-2 text-sm text-on-surface-variant font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Research in Computing
+        </div>
+
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center place-items-center min-h-screen items-center">
-        <div class="card bg-base-100 w-96 shadow-xl">
-            <div class="card-body">
-              <h2 class="card-title text-center">Math Related Courses</h2>
-              <ul class="list-disc pl-5">
-                <li class="mb-1">MATH151 - Engineering Math 1</li>
-                <li class="mb-1">MATH152 - Engineering Math 2</li>
-                <li class="mb-1">MATH251 - Engineering Math 3</li>
-                <li class="mb-1">MATH308 - Differential Equations</li>
-                <li class="mb-1">MATH311 - Top In Applied Math 1</li>
-              </ul>
-            </div>
-        </div>
+</div>
+</div></div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 px-6 py-12 max-w-7xl mx-auto">
+<div>
+<div class="font-headline font-bold text-on-surface mb-2">Yuexin Zhang</div>
+<p class="font-body text-sm text-on-surface-variant">Computer Engineering · Distributed Systems · Intelligent Infrastructure</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="https://www.linkedin.com/in/yuexin-zhang?utm_source=share_via&utm_content=profile&utm_medium=member_ios">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="https://github.com/yuexin-z11">GitHub</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="mailto:yuexin.z.jobs@gmail.com">Email</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="https://www.instagram.com/yuexinzhang1314?igsh=bXdxNTVicWd2bDM4&utm_source=qr">Instagram</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for buttons and scroll reveals
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => btn.style.transform = 'scale(0.95)');
+            btn.addEventListener('mouseup', () => btn.style.transform = 'scale(1)');
+            btn.addEventListener('mouseleave', () => btn.style.transform = 'scale(1)');
+        });
 
-        <div class="card bg-base-100 w-96 shadow-xl">
-            <div class="card-body">
-              <h2 class="card-title text-center">Electrical Engineering Related Courses</h2>
-              <ul class="list-disc pl-5">
-                <li class="mb-1">ECEN248 - Introduction to Digital System Designs</li>
-                <li class="mb-1">ECEN214 - Electrical Circuit Theory</li>
-                <li class="mb-1">ECEN350 - Computer Architecture and Design</li>
-                <li class="mb-1">ECEN314 - Signals and Systems</li>
-                <li class="mb-1">
-                    ECEN325 - Electronics
-                    <span class="indicator-item badge badge-secondary">In Progress</span>
-                </li>
-              </ul>
-            </div>
-        </div>
+        // Simple intersection observer for reveal effect
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
 
-        <div class="card bg-base-100 w-96 shadow-xl">
-          <div class="card-body">
-            <h2 class="card-title text-center">Computer Science Related Courses</h2>
-            <ul class="list-disc pl-5">
-              <li class="mb-1">ENGR102 - Engineering Lab 1 Computation</li>
-              <li class="mb-1">CSCE120 Program Design and Concepts</li>
-              <li class="mb-1">CSCE221 - Data Structure and Algorithms</li>
-              <li class="mb-1">CSCE222 - Discrete Structure Computing</li>
-              <li class="mb-1">CSCE313 - Introduction to Computer System</li>
-              <li class="mb-1">CSCE331 - Foundations of Software Engineering</li>
-              <li class="mb-1">
-                  CSCE310 - Database Systems 
-                  <span class="indicator-item badge badge-secondary">In Progress</span>
-              </li>
-              <li class="mb-1">
-                  CSCE411 - Design and Analysis of Algorithms
-                  <span class="indicator-item badge badge-secondary">In Progress</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card bg-base-100 w-96 shadow-xl">
-          <div class="card-body">
-            <h2 class="card-title text-center">Skills</h2>
-            <ul class="list-disc pl-5">
-              <li class="mb-1">Access</li>
-              <li class="mb-1">Arduino</li>
-              <li class="mb-1">AWS</li>
-              <li class="mb-1">Azure</li>
-              <li class="mb-1">Bootstrap</li>
-              <li class="mb-1">C++</li>
-              <li class="mb-1">CSS</li>
-              <li class="mb-1">Excel</li>
-              <li class="mb-1">Figma</li>
-              <li class="mb-1">HTML</li>
-              <li class="mb-1">Java</li>
-              <li class="mb-1">JavaScript</li>
-              <li class="mb-1">PowerPoint</li>
-              <li class="mb-1">Python</li>
-              <li class="mb-1">R</li>
-              <li class="mb-1">Rest API</li>
-              <li class="mb-1">SQL</li>
-              <li class="mb-1">Word</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card bg-base-100 w-96 shadow-xl">
-          <div class="card-body">
-            <h2 class="card-title text-center">Awards & Certificants</h2>
-            <ul class="list-disc pl-5">
-              <li class="mb-1">
-                <a href="pics/CertificateOfCompletion_FullStack Deep Learning with Python.pdf" target="_blank" class="resume-link">
-                  LinkedIn Learning - Deep Learning
-                </a>
-              </li>
-              <li class="mb-1">
-                <a href="pics/dean24.pdf" target="_blank" class="resume-link">
-                  Dean's Honor Roll (Spring 2024)
-                </a>
-              </li>
-              <li class="mb-1">
-                <a href="pics/dean23.pdf" target="_blank" class="resume-link">
-                  Dean's Honor Roll (Fall 2023)
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card bg-base-100 w-96 shadow-xl">
-            <div class="card-body items-center">
-              <h2 class="card-title text-center">Resume</h2>
-              <a href="pics/Zhang_Yuexin_TexasA&M.pdf" target="_blank" class="resume-link">
-                Click Here to Download My Resume (PDF)
-              </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer Section -->
-    <footer class="footer footer-center bg-accent text-primary-content p-10 mt-auto">
-        <aside>
-            <img
-                src="pics/YZ.png" 
-                alt="My custom image"
-                width="50"
-                height="50"
-                class="inline-block"
-            />
-            <p class="font-bold">
-                Created by Yuexin Zhang
-            </p>
-        </aside>        
-        <nav>
-          <!-- Icon Section -->
-            <div class="grid grid-flow-col gap-4">
-              <a href="#" onclick="showContactInfo('email')">
-                  <img class="mask mask-squircle" width="40" height="40" src="pics/email.png" alt="Email">
-              </a>
-              <a href="#" onclick="showContactInfo('phone')">
-                  <img class="mask mask-squircle" width="40" height="40" src="pics/phone.png" alt="Phone">
-              </a>
-              <a href="#" onclick="showContactInfo('linkedin')">
-                  <img class="mask mask-squircle" width="40" height="40" src="pics/linkedin.png" alt="LinkedIn">
-              </a>
-          </div>
-
-          <!-- Contact Information Section -->
-          <div id="email-info" class="contact-info">
-              <p>Email: yuexin.z.jobs@gmail.com</p>
-          </div>
-          <div id="phone-info" class="contact-info">
-              <p>Phone: +1 (806)392-4012</p>
-          </div>
-          <div id="linkedin-info" class="contact-info">
-              <p>LinkedIn: <a href="https://www.linkedin.com/in/yuexin-zhang/" target="_blank">LinkedIn Profile</a></p>
-          </div>
-
-          <script>
-              function showContactInfo(type) {
-                  const allContactInfo = document.querySelectorAll('.contact-info');
-                  allContactInfo.forEach(info => {
-                      info.style.display = 'none';
-                  });
-
-                  const contactInfo = document.getElementById(`${type}-info`);
-                  if (contactInfo) {
-                      contactInfo.style.display = 'block';
-                  }
-              }
-          </script>
-        </nav>
-    </footer>
-</body>
-</html>
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

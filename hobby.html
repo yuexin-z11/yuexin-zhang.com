@@ -1,184 +1,327 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
-  <style>
-    .contact-info {
-        display: none;
-        background-color: #f1f1f1;
-        padding: 10px;
-        border-radius: 5px;
-        margin-top: 10px;
-    }
-  </style>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Interests | Yuexin Zhang</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#fff7f8",
+                        "on-tertiary": "#f4f9ff",
+                        "outline-variant": "#d1a1e2",
+                        "background": "#fff7fb",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#f8d8ff",
+                        "surface-dim": "#f4cdff",
+                        "inverse-primary": "#fa56b6",
+                        "error": "#ac3149",
+                        "outline": "#976aa7",
+                        "on-surface": "#492159",
+                        "on-tertiary-fixed-variant": "#004762",
+                        "surface-tint": "#b3127b",
+                        "surface-bright": "#fff7fb",
+                        "primary-container": "#ffa6d1",
+                        "tertiary-fixed-dim": "#48b9f0",
+                        "surface": "#fff7fb",
+                        "error-dim": "#770326",
+                        "tertiary-container": "#59c6ff",
+                        "secondary-fixed-dim": "#e5caff",
+                        "on-secondary-container": "#673d94",
+                        "on-primary-fixed-variant": "#88005c",
+                        "on-error-container": "#68001f",
+                        "primary-fixed-dim": "#ff8fc8",
+                        "on-primary-container": "#780051",
+                        "on-primary-fixed": "#530036",
+                        "on-error": "#fff7f7",
+                        "on-secondary-fixed-variant": "#71479f",
+                        "secondary-container": "#efdbff",
+                        "tertiary": "#00668c",
+                        "inverse-on-surface": "#b093b7",
+                        "tertiary-dim": "#00597b",
+                        "primary-fixed": "#ffa6d1",
+                        "on-tertiary-container": "#003d56",
+                        "on-surface-variant": "#794f89",
+                        "surface-container-low": "#ffefff",
+                        "on-secondary-fixed": "#532980",
+                        "secondary-fixed": "#efdbff",
+                        "surface-container-highest": "#f8d8ff",
+                        "on-tertiary-fixed": "#002637",
+                        "secondary-dim": "#683f95",
+                        "surface-container": "#fde7ff",
+                        "on-background": "#492159",
+                        "tertiary-fixed": "#59c6ff",
+                        "primary": "#b3127b",
+                        "inverse-surface": "#190622",
+                        "on-secondary": "#fff6ff",
+                        "surface-container-high": "#fae0ff",
+                        "secondary": "#754ba3",
+                        "primary-dim": "#a0006e",
+                        "error-container": "#f76a80"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif Georgian"],
+                        "display": ["Noto Serif Georgian"],
+                        "body": ["Noto Serif Georgian"],
+                        "label": ["Noto Serif Georgian"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(179, 18, 123, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 40px -10px rgba(73, 33, 89, 0.1);
+        }
+        .photo-slot {
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(20%) contrast(90%);
+            transition: filter 0.5s ease;
+        }
+        .photo-slot:hover {
+            filter: grayscale(0%) contrast(100%);
+        }
+    </style>
 </head>
-
-<body data-theme="cupcake" class="flex flex-col min-h-screen">
-    <div class="navbar bg-accent">
-        <div class="navbar-start">
-            <div class="dropdown">
-              <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h7" />
-                </svg>
-              </div>
-              <ul
-                tabindex="0"
-                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shado">
-                <li><a href="intro.html">Home</a></li>
-                <li><a href="portfolio.html">Project Portfolio</a></li>
-                <li><a href="activities.html">On Campus Involvements</a></li>
-                <li><a href="hobby.html" class="font-bold">Hobbies</a></li>
-                <li><a href="resume.html">Resume Related</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-              </ul>
-            </div>
-        </div>
-        <div class="flex-1">
-          <a class="text-xl font-bold text-primary-content absolute left-1/2 transform -translate-x-1/2">Hobbies</a>
-        </div>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center place-items-center min-h-screen items-center">
-        <div class="card bg-base-100 image-full w-96 shadow-xl">
-            <figure>
-              <img
-                src="pics/tennis.JPG"
-                alt="Shoes" />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">Tennis</h2>
-              <p>I have been playing tennis for seven years now, and I have always loved it. I was on the varsity team in high school, and I still meet with friends at least once a week to play.</p>
-            </div>
-        </div>
-
-        <div class="card bg-base-100 image-full w-96 shadow-xl">
-            <figure>
-              <img
-                src="pics/pickleball.jpeg"
-                alt="Shoes" />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">Pickleball</h2>
-              <p>I developed my interest in pickleball when I came to Texas A&M and have played ever since.</p>
-            </div>
-        </div>
-
-        <div class="card bg-base-100 image-full w-96 shadow-xl">
-            <figure>
-              <img
-                src="pics/skating.jpg"
-                alt="Shoes" />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">Figure Skating</h2>
-              <p>I fell in love with this sport when I first skated in New York and now I am taking weekly lessons and practicing to be a figure skater during my free time.</p>
-            </div>
-        </div>
-
-        <div class="card bg-base-100 image-full w-96 shadow-xl">
-            <figure>
-              <img
-                src="pics/dancing.jpg"
-                alt="Shoes" />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">Line Dancing</h2>
-              <p>It's a hobby I recently developed and I have been going to line dance or swing dance with my friends every week.</p>
-            </div>
-        </div>
-
-        <div class="card bg-base-100 image-full w-96 shadow-xl">
-            <figure>
-              <img
-                src="pics/books.jpg"
-                alt="Shoes" />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">Reading</h2>
-              <p>I decided to start consistently reading this year and my goal this year is to read 13 books.</p>
-            </div>
-        </div>
-
-        <div class="card bg-base-100 image-full w-96 shadow-xl">
-            <figure>
-              <img
-                src="pics/hike.jpg"
-                alt="Shoes" />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">Outdoor</h2>
-              <p>Being under the sun and taking a walk has always calmed me therefore I always enjoyed hiking and exploring or just simply reading outside.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer Section -->
-    <footer class="footer footer-center bg-accent text-primary-content p-10 mt-auto">
-        <aside>
-            <img
-                src="pics/YZ.png" 
-                alt="My custom image"
-                width="50"
-                height="50"
-                class="inline-block"
-            />
-            <p class="font-bold">
-                Created by Yuexin Zhang
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md shadow-sm border-b border-outline-variant/20">
+<nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-display font-bold tracking-tight text-primary">Yuexin Zhang</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="portfolio.html">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="activities.html">Involvements</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Interests</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="resume.html">Resume</a>
+</div>
+<a href="contact.html">
+    <button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-medium hover:scale-95 transition-transform">
+            Contact
+        </button>
+</a>
+</nav>
+</header>
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-20 space-y-4">
+<h1 class="text-5xl md:text-7xl font-display font-extrabold text-on-surface tracking-tight leading-tight mb-4">
+        Beyond <span class="text-primary">Engineering</span>
+</h1>
+<p class="text-lg text-on-surface-variant max-w-2xl">
+                Where engineering precision meets athletic rhythm and exploration.
             </p>
-        </aside>        
-        <nav>
-          <!-- Icon Section -->
-            <div class="grid grid-flow-col gap-4">
-              <a href="#" onclick="showContactInfo('email')">
-                  <img class="mask mask-squircle" width="40" height="40" src="pics/email.png" alt="Email">
-              </a>
-              <a href="#" onclick="showContactInfo('phone')">
-                  <img class="mask mask-squircle" width="40" height="40" src="pics/phone.png" alt="Phone">
-              </a>
-              <a href="#" onclick="showContactInfo('linkedin')">
-                  <img class="mask mask-squircle" width="40" height="40" src="pics/linkedin.png" alt="LinkedIn">
-              </a>
-          </div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[160px]">
+<!-- Technical: Distributed Architectures -->
+<div class="md:col-span-8 md:row-span-2 glass-card p-8 rounded-3xl flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-tertiary">memory</span>
+<span class="text-xs font-bold tracking-widest text-tertiary-dim uppercase">Infrastructure</span>
+</div>
+<h3 class="text-3xl font-display font-bold text-on-surface mb-4">Systems Architecture</h3>
+<p class="text-on-surface-variant leading-relaxed max-w-xl">
+                        Exploring the interaction between hardware and software through embedded systems, distributed infrastructure, operating systems, and performance-oriented architecture.
+                    </p>
+</div>
+<div class="flex gap-2 mt-4 flex-wrap">
+  <span class="px-3 py-1 bg-surface-container rounded-lg text-xs text-on-surface-variant">Distributed Systems</span>
+  <span class="px-3 py-1 bg-surface-container rounded-lg text-xs text-on-surface-variant">Embedded Systems</span>
+  <span class="px-3 py-1 bg-surface-container rounded-lg text-xs text-on-surface-variant">FPGA</span>
+</div>
+</div>
+<!-- Photo Slot 1 -->
+<div class="md:col-span-4 md:row-span-2 photo-slot rounded-3xl bg-surface-dim overflow-hidden relative group">
+<img alt="Server clusters" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACFQr648KhpJUq09jdKTrLTwH6WXzNK6mLRLp4l9oqgvSDaQbbwHfJojkg7GLr8L-S65MQ4qFarnqrgAvObuYBuV6L5PjdCe9ZjRy60mjoPnWbU1lsNw9EZuVOschLfJgErQ7zu2VrqppfELDe09a9PL9kz9hdtjrcyk4dmOUFZC0yDR6ViCiV99J6uAzHWReMdsZJR2MzCBkgr2e3YAiM1tgApD_kN_EOr7i6EvLcklnZ6Fy1ikup-6ctExLvh0T8Fx2CjExJNeLn"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-60"></div>
+</div>
+<!-- Athletic: Pickleball -->
+<div class="md:col-span-4 md:row-span-3 glass-card p-8 rounded-3xl flex flex-col">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary mb-6">
+<span class="material-symbols-outlined">pickleball</span>
+</div>
+<h3 class="text-2xl font-display font-bold text-on-surface mb-4">Pickleball</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                    Pickleball became a hobby I picked up during my senior year of high school and has remained a consistent part of my life through recreational games with friends. Its balance of strategy, reaction time, and social interaction reflects the same adaptability and collaboration that I value in engineering and team environments.
+                </p>
+</div>
+<!-- Photo Slot 2 -->
+<div class="md:col-span-4 md:row-span-2 photo-slot rounded-3xl bg-surface-variant overflow-hidden">
+<img alt="Tennis court detail" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" src="pics/tennis.JPG"/>
+</div>
+<!-- Tennis -->
+<div class="md:col-span-4 md:row-span-2 glass-card p-8 rounded-3xl bg-primary-container/10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">sports_tennis</span>
+<span class="text-xs font-bold tracking-widest text-primary-dim uppercase">Sports</span>
+</div>
+<h3 class="text-2xl font-display font-bold text-on-surface mb-2">Tennis</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                    Having played tennis for over 8 years, including at the varsity level in high school, I continue to enjoy the sport recreationally with friends.
+                </p>
+</div>
+<!-- Athletic: Horseback Riding -->
+<div class="md:col-span-5 md:row-span-3 glass-card p-8 rounded-3xl">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">pets</span>
+</div>
+<h3 class="text-2xl font-display font-bold text-on-surface">Equestrian</h3>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                    I began horseback riding in 4th grade and competed for many years, earning recognition across numerous competitions. Although I stepped away during high school due to a change in environment, I still continue riding recreationally whenever I have the opportunity. My passion for horseback riding has never faded, and horses continue to be my favorite animal. The sport has strengthened my discipline, adaptability, and ability to stay composed through constant communication, precision, and awareness.
+                </p>
+</div>
+<!-- Country Dancing -->
+<div class="md:col-span-3 md:row-span-6 glass-card p-8 rounded-3xl">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">nightlife</span>
+</div>
+<h3 class="text-2xl font-display font-bold text-on-surface">Country Dancing</h3>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                    I started country dancing during the first semester of my sophomore year of college at <strong>Hurricane Harry’s</strong>, a local dance hall that quickly became one of my favorite places to unwind and connect with others. Since then, I have continued going back almost every week, developing a strong passion for both line dancing and country swing. Country dancing has given me an outlet for confidence, rhythm, and social connection while teaching me the importance of timing, coordination, and learning through repetition.
+                </p>
+</div>
+<!-- Photo Slot 3 -->
+<div class="md:col-span-4 md:row-span-2 glass-card p-8 rounded-3xl bg-secondary-container/20">
+<img alt="Tennis court detail" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" src="pics/horses.JPG"/>
+</div>
+<!-- Athletic: Golf -->
+<div class="md:col-span-4 md:row-span-2 glass-card p-8 rounded-3xl">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">sports_golf</span>
+</div>
+<h3 class="text-2xl font-display font-bold text-on-surface">Golf</h3>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                    My interest in golfing during my sophomore year of college after taking a kinesiology course that introduced me to the sport. With the encouragement and support of my family, I continued learning and practicing consistently over time. 
+                </p>
+</div>
+<!-- Photo Slot 4 -->
+<div class="md:col-span-5 md:row-span-2 photo-slot rounded-3xl bg-surface-variant overflow-hidden">
+<img alt="Group Dance" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" src="pics/dancing.JPG"/>
+</div>
+<!-- Photo Slot 5 -->
+<div class="md:col-span-7 md:row-span-2 photo-slot rounded-3xl bg-surface-variant overflow-hidden">
+<img alt="Harry's" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" src="pics/dance.JPG"/>
+</div>
+<!-- Explore -->
+<div class="md:col-span-2 md:row-span-1 glass-card p-8 rounded-3xl bg-primary-container/10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">explore</span>
+<span class="text-xs font-bold tracking-widest text-primary-dim uppercase">Explore</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                    Trying new restaurants and traveling. 
+                </p>
+</div>
+<!-- Volunteering -->
+<div class="md:col-span-5 md:row-span-2 glass-card p-8 rounded-3xl">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+      <span class="material-symbols-outlined">volunteer_activism</span>
+    </div>
+    <h3 class="text-2xl font-display font-bold text-on-surface">Volunteer</h3>
+  </div>
 
-          <!-- Contact Information Section -->
-          <div id="email-info" class="contact-info">
-              <p>Email: yuexin.z.jobs@gmail.com</p>
-          </div>
-          <div id="phone-info" class="contact-info">
-              <p>Phone: +1 (806)392-4012</p>
-          </div>
-          <div id="linkedin-info" class="contact-info">
-              <p>LinkedIn: <a href="https://www.linkedin.com/in/yuexin-zhang/" target="_blank">LinkedIn Profile</a></p>
-          </div>
+  <p class="text-on-surface-variant text-sm leading-relaxed">
+    I am actively involved in volunteering at large-scale campus and community events at Texas A&M University. My experience includes participating in initiatives such as Adopt-A-Street and Big Event, where I contribute to maintaining a clean and sustainable environment.
+  </p>
+</div>
+<!-- Photo Slot 6 -->
+<div class="md:col-span-4 md:row-span-2 photo-slot rounded-3xl bg-surface-variant overflow-hidden">
+<img alt="Football Games" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" src="pics/3.JPG"/>
+</div>
+<!-- Summary Card -->
+<div class="md:col-span-3 md:row-span-2 bg-surface-container-high p-8 rounded-3xl flex items-center justify-center text-center border border-primary/10">
+<p class="text-on-surface-variant italic font-display text-lg">
+                    "I’ve found that both engineering and my interests in sports and dance share a common rhythm—precision, strategy, and continuous improvement."
+                </p>
+</div>
+<!-- Photo Slot 7 -->
+<div class="md:col-span-5 md:row-span-1 photo-slot rounded-3xl bg-surface-variant overflow-hidden">
+<img alt="Travel" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" src="pics/1.JPG"/>
+</div>
+</div>
 
-          <script>
-              function showContactInfo(type) {
-                  const allContactInfo = document.querySelectorAll('.contact-info');
-                  allContactInfo.forEach(info => {
-                      info.style.display = 'none';
-                  });
-
-                  const contactInfo = document.getElementById(`${type}-info`);
-                  if (contactInfo) {
-                      contactInfo.style.display = 'block';
-                  }
-              }
-          </script>
-        </nav>
-    </footer>
-</body>
-</html>
+<!-- Quote Block -->
+<section class="mt-32 text-center max-w-3xl mx-auto px-6">
+<span class="material-symbols-outlined text-primary text-6xl mb-6 opacity-30">format_quote</span>
+<p class="text-2xl md:text-3xl font-display italic text-on-surface leading-relaxed">
+                "We keep moving forward, opening new doors, and trying new things, because we are curious and curiosity keeps leading us down new paths."
+            </p>
+<div class="mt-8 flex items-center justify-center gap-4">
+<div class="h-px w-12 bg-outline-variant"></div>
+<span class="uppercase tracking-widest text-sm font-bold text-on-surface-variant">Walt Disney</span>
+<div class="h-px w-12 bg-outline-variant"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 px-6 py-12 max-w-7xl mx-auto">
+<div>
+<div class="font-headline font-bold text-on-surface mb-2">Yuexin Zhang</div>
+<p class="font-body text-sm text-on-surface-variant">Computer Engineering · Distributed Systems · Intelligent Infrastructure</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="https://www.linkedin.com/in/yuexin-zhang?utm_source=share_via&utm_content=profile&utm_medium=member_ios">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="https://github.com/yuexin-z11">GitHub</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="mailto:yuexin.z.jobs@gmail.com">Email</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors underline font-body text-sm" href="https://www.instagram.com/yuexinzhang1314?igsh=bXdxNTVicWd2bDM4&utm_source=qr">Instagram</a>
+</div>
+</div>
+</footer>
+<!-- FAB for Interaction -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="bg-primary text-on-primary w-14 h-14 rounded-2xl shadow-xl flex items-center justify-center hover:rotate-12 transition-transform group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">mail</span>
+</button>
+</div>
+<script>
+        // Simple hover effect enhancement
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>
