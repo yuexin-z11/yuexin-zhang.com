@@ -115,7 +115,7 @@
 <header class="mb-16">
 <h1 class="text-5xl font-headline font-bold text-primary mb-4">Contact</h1>
 <p class="text-on-surface-variant max-w-2xl text-lg italic">
-                Invitations for peer-review, collaborative research, or professional inquiries are welcomed. 
+                Open to software engineering, systems, embedded, and research opportunities.
             </p>
 </header>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -125,23 +125,54 @@
 <span class="material-symbols-outlined text-primary">mail</span>
                     Contact Me
                 </h2>
-<form class="space-y-6" onsubmit="event.preventDefault();">
+<form 
+  action="https://formsubmit.co/3d40b49b74af52e0ee790e5dcfee8729"
+  method="POST"
+  class="space-y-6"
+>
 <div class="space-y-2">
 <label class="block font-label text-sm font-medium text-on-surface-variant">Full Name</label>
-<input class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" placeholder="Dr. Julian Vane" type="text">
+<input 
+  name="name"
+  class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" 
+  placeholder="Dr. Julian Vane" 
+  type="text"
+  required
+>
 </div>
 <div class="space-y-2">
 <label class="block font-label text-sm font-medium text-on-surface-variant">Email</label>
-<input class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" placeholder="jane@gmail.com" type="email">
+<input 
+  name="email"
+  class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" 
+  placeholder="vane@gmail.com" 
+  type="email"
+  required
+>
 </div>
 <div class="space-y-2">
 <label class="block font-label text-sm font-medium text-on-surface-variant">Subject / Project Intent</label>
-<input class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" placeholder="Re: Distributed Systems Architecture" type="text">
+<input 
+  name="subject"
+  class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" 
+  placeholder="Re: Distributed Systems Architecture" 
+  type="text"
+>
 </div>
 <div class="space-y-2">
 <label class="block font-label text-sm font-medium text-on-surface-variant">Message</label>
-<textarea class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none resize-none" placeholder="Detail your proposal or inquiry here..." rows="5"></textarea>
+<textarea 
+  name="message"
+  class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none resize-none" 
+  placeholder="Detail your proposal or inquiry here..." 
+  rows="5"
+  required
+></textarea>
 </div>
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_subject" value="New Portfolio Contact Form Submission">
+<input type="hidden" name="_next" value="https://yuexin-zhang.com/thankyou.html">
 <button class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold hover:opacity-90 transform active:scale-95 transition-all shadow-md">
                         Send Message
                     </button>
