@@ -243,7 +243,7 @@
 </div>
 <h3 class="text-2xl font-display font-bold mb-4">AXI-Controlled Symmetric FIR Filter on Zynq-7000 FPGA</h3>
 <p class="text-on-surface-variant text-sm mb-8 line-clamp-3">
-          An embedded Linux platform integrating ARM processing systems with programmable logic on the Zynq-7000 SoC.
+          Designed and implemented an 8-tap pipelined FIR filter on the Zynq-7000 FPGA using DSP48E1 systolic architecture with AXI4-Lite hardware/software integration.
         </p>
 <div class="flex items-center gap-2 text-primary font-bold text-sm mt-auto">
           View Specifications <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
@@ -421,17 +421,17 @@
         title: "AXI-Controlled Symmetric FIR Filter on Zynq-7000 FPGA",
         description: "Designed and implemented a pipelined 8-tap even-symmetric FIR filter on the Zynq-7000 FPGA using DSP48E1-based systolic architecture, integrating custom AXI4-Lite hardware acceleration with embedded software control through the Processing System (PS).",
         specs: [
-        "Developed an embedded Linux environment on the Zynq-7000 SoC.",
-        "Integrated ARM processing systems with FPGA programmable logic.",
-        "Created and tested bootable SD card images for Linux deployment.",
-        "Configured low-level hardware-software interactions for embedded system bring-up."
+        "Designed a fully pipelined 8-tap symmetric FIR filter in Verilog using DSP48E1 multiply-accumulate slices on Zynq-7000 programmable logic.",
+        "Implemented systolic FIR datapath architecture with four DSP48E1-based MAC elements and coefficient symmetry optimization.",
+        "Built finite-state machine (FSM) control logic to coordinate FIR execution, input streaming, output capture, and DONE/RUN synchronization.",
+        "Verified pipelined FIR operation and output correctness using FPGA-based testing with known input sequences."
         ],
         metrics: [
-        { label: "Platform", value: "Zynq-7000", sub: "ARM + FPGA architecture" },
-        { label: "Boot Method", value: "SD Boot", sub: "Embedded Linux deployment" },
-        { label: "Verification", value: "UART", sub: "System startup validation" }
+        { label: "Filter Architecture", value: "8-Tap FIR", sub: "Even-symmetric systolic pipeline" },
+        { label: "Hardware Platform", value: "Zynq-7000", sub: "ARM + FPGA SoC integration" },
+        { label: "Interface", value: "AXI4-Lite", sub: "Memory-mapped PS/PL communication" }
         ],
-        links: {docs: "#" }
+        links: {docs: "https://drive.google.com/drive/folders/1Kg_WvmslHMf-6zYeXSxXKYH6IL12FQxw?usp=sharing" }
       }
     };
 
