@@ -222,30 +222,30 @@
 </div>
 </div>
 <!-- Project 3 -->
-<div class="group cursor-pointer glass-card p-8 rounded-xl hover:bg-surface-container-highest transition-all duration-300 border-l-4 border-tertiary shadow-sm hover:shadow-lg" onclick="openModal('kernel')">
+<div class="group cursor-pointer glass-card p-8 rounded-xl hover:bg-surface-container-highest transition-all duration-300 border-l-4 border-secondary shadow-sm hover:shadow-lg" onclick="openModal('infra1')">
 <div class="flex justify-between items-start mb-6">
-<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="settings_suggest">event</span>
-<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">Full-Stack Development</span>
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="settings_suggest">settings_suggest</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">Backend Infrastructure</span>
 </div>
-<h3 class="text-2xl font-display font-bold mb-4">Event & Meeting Management Platform</h3>
+<h3 class="text-2xl font-display font-bold mb-4">Load Balancer</h3>
 <p class="text-on-surface-variant text-sm mb-8 line-clamp-3">
-          A full-stack event coordination platform optimized for scheduling, attendance tracking, and collaborative organization management.
+          Designed and implemented a discrete-event load balancer simulation in C++ featuring dynamic server scaling, randomized traffic generation, request scheduling, and IP-based firewall filtering.
         </p>
-<div class="flex items-center gap-2 text-tertiary font-bold text-sm mt-auto">
+<div class="flex items-center gap-2 text-secondary font-bold text-sm mt-auto">
           View Specifications <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
 </div>
 </div>
 <!-- Project 4 -->
-<div class="group cursor-pointer glass-card p-8 rounded-xl hover:bg-surface-container-highest transition-all duration-300 border-l-4 border-secondary shadow-sm hover:shadow-lg" onclick="openModal('profiler')">
+<div class="group cursor-pointer glass-card p-8 rounded-xl hover:bg-surface-container-highest transition-all duration-300 border-l-4 border-primary shadow-sm hover:shadow-lg" onclick="openModal('profiler')">
 <div class="flex justify-between items-start mb-6">
-<span class="material-symbols-outlined text-secondary text-3xl" data-icon="monitoring">developer_board</span>
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="monitoring">developer_board</span>
 <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">Embedded Systems</span>
 </div>
 <h3 class="text-2xl font-display font-bold mb-4">Embedded Linux System on ZYBO Z7-10</h3>
 <p class="text-on-surface-variant text-sm mb-8 line-clamp-3">
           An embedded Linux platform integrating ARM processing systems with programmable logic on the Zynq-7000 SoC.
         </p>
-<div class="flex items-center gap-2 text-secondary font-bold text-sm mt-auto">
+<div class="flex items-center gap-2 text-primary font-bold text-sm mt-auto">
           View Specifications <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
 </div>
 </div>
@@ -309,6 +309,7 @@
 <div class="space-y-4 mb-8" id="modalSpecs">
 <!-- Specs injected by JS -->
 </div>
+<p id="modalNote" class="text-xs text-on-surface-variant/60 italic mb-8"></p>
 <div class="flex flex-wrap gap-6 mt-12 pt-8 border-t border-outline-variant/30">
 <a class="flex items-center gap-2 font-bold text-primary hover:underline underline-offset-4" href="#" id="modalGithub">
 <span class="material-symbols-outlined text-xl">code</span> GitHub Repository
@@ -346,7 +347,7 @@
             { label: "Scalability", value: "Multi-Node", sub: "Cluster orchestration" },
             { label: "Environment", value: "Cloud + HPC", sub: "Hybrid infrastructure" }
         ],
-        links: { github: "#", docs: "#" }
+        links: { github: "https://github.com/yuexin-z11/cloudmesh-platform.git"}
       },
       harden: {
         title: "HARDEN — Hardware-Assisted Real-time Detection & Enforcement Network",
@@ -363,11 +364,12 @@
           { label: "Deployment", value: "Embedded Linux", sub: "ARM64 edge devices" },
           { label: "Focus", value: "Cybersecurity", sub: "Threat detection & enforcement" }
         ],
-        links: { github: "#", docs: "#" }
+        links: { github: "https://github.com/jackflc/csce-483-harden"}
       },
       consensus: {
         title: "Panda Express POS System",
         description: "Built backend and full-stack features for a restaurant POS system using Next.js and PostgreSQL, including order processing, combo logic, and real-time dashboard integrations.",
+        note: "This repository is a migrated version of an earlier project; original commit history is not preserved due to repository restructuring.",
         specs: [
         "Built using Next.js with PostgreSQL database integration.",
         "Implemented combo-order logic and dynamic size selection workflows.",
@@ -380,7 +382,24 @@
         { label: "Concurrent Views", value: "5", sub: "Integrated POS interfaces" },
         { label: "Data Sync", value: "Real-Time", sub: "Order and inventory updates" }
         ],
-        links: { github: "#", docs: "#" }
+        links: { github: "https://github.com/yuexin-z11/POS_system.git"}
+      },
+      infra1: {
+        title: "Load Balancer Simulation",
+        description: "A systems-level backend simulation project modeling how distributed web infrastructure handles incoming traffic under varying workloads. Built in C++, the simulator emulates request queuing, server dispatching, autoscaling behavior, and network filtering mechanisms commonly used in cloud and distributed systems.",
+        specs: [
+        "Built a discrete-event simulation framework in C++17 using object-oriented system design.",
+        "Implemented request lifecycle modeling including randomized arrivals, queue buffering, dispatch scheduling, and processing completion.",
+        "Developed dynamic autoscaling logic using configurable utilization thresholds for server scale-up and scale-down events.",
+        "Created firewall/IP filtering functionality with CIDR-based range blocking to simulate traffic security controls.",
+        "Modeled multi-server load distribution with FIFO request queues and per-server busy/idle state tracking."
+        ],
+        metrics: [
+        { label: "Simulation Ticks", value: "50+", sub: "Configurable runtime execution cycles" },
+        { label: "Server Scaling", value: "Dynamic", sub: "Automatic horizontal scaling behavior" },
+        { label: "Platform", value: "C++", sub: "Systems-level programming" }
+        ],
+        links: { github: "https://github.com/yuexin-z11/load_balancer" }
       },
       kernel: {
         title: "Event & Meeting Management Platform",
@@ -412,13 +431,43 @@
         { label: "Boot Method", value: "SD Boot", sub: "Embedded Linux deployment" },
         { label: "Verification", value: "UART", sub: "System startup validation" }
         ],
-        links: { github: "#", docs: "#" }
+        links: {docs: "#" }
       }
     };
 
     function openModal(projectId) {
+      
       const data = projectData[projectId];
       if (!data) return;
+
+      const githubButton = document.getElementById('modalGithub');
+      const docsButton = document.getElementById('modalDocs');
+
+      if (data.links.github) {
+        githubButton.href = data.links.github;
+        githubButton.classList.remove('hidden');
+      } else {
+        githubButton.classList.add('hidden');
+      }
+
+      if (data.links.docs) {
+        docsButton.href = data.links.docs;
+        docsButton.classList.remove('hidden');
+      } else {
+        docsButton.classList.add('hidden');
+      }
+
+      const noteEl = document.getElementById('modalNote');
+
+      if (noteEl) {
+        noteEl.textContent = "";
+        noteEl.classList.add('hidden');
+
+        if (data.note) {
+          noteEl.textContent = data.note;
+          noteEl.classList.remove('hidden');
+        }
+      }
 
       document.getElementById('modalTitle').textContent = data.title;
       document.getElementById('modalDescription').textContent = data.description;
